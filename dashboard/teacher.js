@@ -1,9 +1,8 @@
-// FILE: dashboard/teacher.js (Final Version for Milestone 4)
+// FILE: dashboard/teacher.js (Corrected Version)
 import { firebaseConfig } from '../js/firebase-config.js';
 
-// --- IMPORTANT: PASTE YOUR CLOUD FUNCTION URL HERE ---
-// This is the trigger URL for your 'createUserAccount' function.
-const CREATE_USER_URL = 'YOUR_CREATE_USER_FUNCTION_URL_HERE';
+// --- 1. THE CORRECT URL IS PLACED HERE ---
+const CREATE_USER_URL = 'https://get-all-submissions-305371665876.europe-west6.run.app/createUserAccount';
 
 // --- INITIALIZE FIREBASE ---
 firebase.initializeApp(firebaseConfig);
@@ -44,7 +43,6 @@ auth.onAuthStateChanged(async (user) => {
             auth.signOut();
         }
     } else {
-        // Reset state on logout
         state = { user: null, idToken: null, classes: [], users: [], submissions: {}, selectedClassId: null };
         dashboardContainer.style.display = 'none';
         loginOverlay.classList.add('visible');
@@ -65,7 +63,7 @@ logoutBtn.addEventListener('click', () => auth.signOut());
 async function initializeApp() {
     sidebarContent.innerHTML = '<p>Lade Daten...</p>';
     await fetchData();
-    renderClassesTab(); // Start on the classes tab
+    renderClassesTab();
 }
 
 async function fetchData() {
@@ -73,12 +71,10 @@ async function fetchData() {
         const classesPromise = db.collection('classes').where('teacherId', '==', state.user.uid).get();
         const usersPromise = db.collection('users').get();
         const submissionsPromise = db.collection('submissions').get();
-
         const [classSnap, userSnap, submissionSnap] = await Promise.all([classesPromise, usersPromise, submissionsPromise]);
-
         state.classes = classSnap.docs.map(doc => ({ id: doc.id, ...doc.data() }));
         state.users = userSnap.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-        state.submissions = {}; // Reset before populating
+        state.submissions = {};
         submissionSnap.forEach(doc => { state.submissions[doc.id] = doc.data(); });
     } catch (error) {
         console.error("Error fetching data:", error);
@@ -89,7 +85,6 @@ async function fetchData() {
 // --- RENDER FUNCTIONS ---
 function renderClassesTab() {
     const classListHtml = state.classes.map(c => `<div class="class-item" data-id="${c.id}">${c.className}</div>`).join('') || '<i>Noch keine Klassen erstellt.</i>';
-    
     sidebarContent.innerHTML = `
         <div id="class-list">${classListHtml}</div>
         <div class="form-section">
@@ -106,7 +101,6 @@ function renderClassesTab() {
 function renderStudentsTab() {
     const classOptions = state.classes.map(c => `<option value="${c.id}">${c.className}</option>`).join('');
     let studentListHtml = '<i>Wählen Sie eine Klasse, um Schüler anzuzeigen.</i>';
-
     if (state.selectedClassId) {
         const studentsInClass = state.users.filter(u => u.classId === state.selectedClassId);
         studentListHtml = studentsInClass.map(s => `
@@ -116,7 +110,6 @@ function renderStudentsTab() {
             </div>
         `).join('') || '<i>Keine Schüler in dieser Klasse.</i>';
     }
-
     sidebarContent.innerHTML = `
         <select id="class-selector" style="width:100%; padding:8px; margin-bottom:1em;">
             <option value="">Klasse auswählen...</option>
@@ -138,7 +131,7 @@ function renderStudentsTab() {
     if (state.selectedClassId) classSelector.value = state.selectedClassId;
     classSelector.addEventListener('change', (e) => {
         state.selectedClassId = e.target.value;
-        renderStudentsTab(); // Re-render with the selected class
+        renderStudentsTab();
     });
     document.getElementById('add-student-form').addEventListener('submit', handleAddStudent);
     attachStudentListListeners();
@@ -149,12 +142,10 @@ function renderSubmissionContent(studentId) {
     viewerContent.innerHTML = '';
     const submission = state.submissions[studentId];
     const student = state.users.find(u => u.id === studentId);
-
     if (!submission) {
         viewerContent.innerHTML = `<h3>Für ${student?.displayName || 'diesen Schüler'} wurde noch keine Abgabe gefunden.</h3>`;
         return;
     }
-    
     let contentHtml = `<h1>Abgabe von ${student?.displayName || 'Schüler'}</h1>`;
     for (const pageId in submission) {
         contentHtml += `<div class="assignment-block"><h2>Seite: ${pageId}</h2>`;
@@ -180,13 +171,12 @@ function attachTabEventListeners() {
             const tab = e.target.dataset.tab;
             document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
             e.target.classList.add('active');
-            
             if (tab === 'classes') renderClassesTab();
             else if (tab === 'students') renderStudentsTab();
         });
     });
 }
-attachTabEventListeners(); // Initial call
+attachTabEventListeners();
 
 function attachStudentListListeners() {
     document.querySelectorAll('#student-list .student-item').forEach(item => {
@@ -197,18 +187,12 @@ function attachStudentListListeners() {
 async function handleAddClass(e) {
     e.preventDefault();
     const form = e.target;
-    const className = form.className.value;
+    const className = form.className..value;
     if (!className) return;
-    
     const registrationCode = Math.random().toString(36).substring(2, 8).toUpperCase();
-    
     try {
-        await db.collection('classes').add({
-            className,
-            teacherId: state.user.uid,
-            registrationCode
-        });
-        await initializeApp(); // Refresh all data and re-render
+        await db.collection('classes').add({ className, teacherId: state.user.uid, registrationCode });
+        await initializeApp();
     } catch (error) {
         console.error("Error adding class:", error);
         alert("Klasse konnte nicht erstellt werden.");
@@ -226,6 +210,7 @@ async function handleAddStudent(e) {
         password: form.password.value,
     };
 
+    // --- 2. THE SAFETY CHECK NOW CORRECTLY LOOKS FOR THE PLACEHOLDER ---
     if (CREATE_USER_URL.includes('YOUR_CREATE_USER_FUNCTION_URL')) {
         alert('Konfigurationsfehler: Die URL der Cloud Function ist in teacher.js nicht festgelegt.');
         return;
@@ -239,10 +224,9 @@ async function handleAddStudent(e) {
         });
         const result = await response.json();
         if (!response.ok) throw new Error(result.message);
-        
         alert(result.message);
-        await initializeApp(); // Refresh all data and re-render
-        renderStudentsTab(); // Switch back to the students tab
+        await initializeApp();
+        renderStudentsTab();
     } catch (error) {
         console.error("Error adding student:", error);
         alert(`Fehler: ${error.message}`);
