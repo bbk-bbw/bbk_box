@@ -10,12 +10,15 @@
 <!-- FILE: index.html (REPLACE averything inside <body>) -->
 <body>
     <div id="app-wrapper">
-        <!-- Sidebar for navigation will be generated here -->
         <aside id="stepper-sidebar">
             <h2 id="assignment-title">Lade Aufgabe...</h2>
             <nav id="stepper-nav"></nav>
-            <button id="print-btn" style="margin-top: auto; padding: 10px;">Antworten drucken 🖨</button>
 
+            <div style="margin-top: auto; display: flex; flex-direction: column; gap: 0.5em;">
+                <button id="print-btn" style="padding: 10px;">Antworten drucken 🖨</button>
+                <!-- ADD THIS LOGOUT BUTTON -->
+                <button id="logout-btn" style="padding: 10px; background-color: #6c757d; border-color: #6c757d;">Abmelden</button>
+            </div>
         </aside>
 
         <!-- Main content area for the current step -->

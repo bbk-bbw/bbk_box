@@ -1,0 +1,100 @@
+<!-- FILE: login.html (NEW FILE) -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anmeldung - LMS Box</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Styles specific to the login page */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f2f5;
+        }
+        .auth-container {
+            padding: 2em 3em;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        .auth-container h2 {
+            text-align: center;
+            margin-bottom: 1.5em;
+        }
+        .auth-form input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .auth-form button {
+            width: 100%;
+            padding: 12px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+        .toggle-link, .forgot-password {
+            display: block;
+            text-align: center;
+            margin-top: 1em;
+            color: #007bff;
+            cursor: pointer;
+        }
+        #status-message {
+            color: #dc3545;
+            text-align: center;
+            min-height: 1.2em;
+            margin-top: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <!-- Login Form -->
+        <div id="login-view">
+            <h2>Anmelden</h2>
+            <form id="login-form" class="auth-form">
+                <input type="email" id="login-email" placeholder="E-Mail" required>
+                <input type="password" id="login-password" placeholder="Passwort" required>
+                <button type="submit">Anmelden</button>
+            </form>
+            <a id="show-signup" class="toggle-link">Noch kein Konto? Registrieren</a>
+            <a id="forgot-password" class="forgot-password">Passwort vergessen?</a>
+        </div>
+
+        <!-- Signup Form -->
+        <div id="signup-view" style="display: none;">
+            <h2>Registrieren</h2>
+            <form id="signup-form" class="auth-form">
+                <input type="text" id="signup-name" placeholder="Vor- und Nachname" required>
+                <input type="email" id="signup-email" placeholder="E-Mail" required>
+                <input type="password" id="signup-password" placeholder="Passwort" required>
+                <button type="submit">Konto erstellen</button>
+            </form>
+            <a id="show-login" class="toggle-link">Bereits ein Konto? Anmelden</a>
+        </div>
+        
+        <p id="status-message"></p>
+    </div>
+
+    <!-- Firebase SDKs are needed here too -->
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore-compat.js"></script>
+    
+    <!-- New script to handle login logic -->
+    <script src="js/login.js" type="module"></script>
+</body>
+</html>
