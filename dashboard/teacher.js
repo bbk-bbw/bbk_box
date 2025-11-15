@@ -2,7 +2,7 @@
 import { firebaseConfig } from '../js/firebase-config.js';
 
 // --- IMPORTANT: PASTE YOUR CLOUD FUNCTION URL HERE ---
-const CREATE_USER_URL = 'https://get-all-submissions-30537166-5876.europe-west6.run.app/createUserAccount';
+const CREATE_USER_URL = 'https://get-all-submissions-305371665876.europe-west6.run.app/createUserAccount';
 
 // --- INITIALIZE FIREBASE ---
 firebase.initializeApp(firebaseConfig);
