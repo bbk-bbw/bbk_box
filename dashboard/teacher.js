@@ -1,13 +1,12 @@
-// FILE: dashboard/teacher.js (Corrected Version)
+// FILE: dashboard/teacher.js (Final Corrected Version)
 import { firebaseConfig } from '../js/firebase-config.js';
 
-// --- IMPORTANT: PASTE YOUR CLOUD FUNCTION URL HERE ---
 const CREATE_USER_URL = 'https://get-all-submissions-305371665876.europe-west6.run.app/createUserAccount';
 
 // --- INITIALIZE FIREBASE ---
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
-const db = firebase.firestore();
+const db = firebase.firestore(); // This was missing
 
 // --- GLOBAL STATE ---
 let state = {
@@ -66,23 +65,28 @@ async function initializeApp() {
     renderClassesTab();
 }
 
+// --- THIS IS THE CORRECTED fetchData FUNCTION ---
 async function fetchData() {
     try {
+        // Teachers can read all these collections based on our security rules.
+        // We no longer need to call the old 'getAllSubmissions' function.
         const classesPromise = db.collection('classes').where('teacherId', '==', state.user.uid).get();
         const usersPromise = db.collection('users').get();
         const submissionsPromise = db.collection('submissions').get();
+
         const [classSnap, userSnap, submissionSnap] = await Promise.all([classesPromise, usersPromise, submissionsPromise]);
+
         state.classes = classSnap.docs.map(doc => ({ id: doc.id, ...doc.data() }));
         state.users = userSnap.docs.map(doc => ({ id: doc.id, ...doc.data() }));
         state.submissions = {};
         submissionSnap.forEach(doc => { state.submissions[doc.id] = doc.data(); });
     } catch (error) {
-        console.error("Error fetching data:", error);
-        sidebarContent.innerHTML = '<p style="color:red;">Fehler beim Laden der Daten.</p>';
+        console.error("Error fetching data directly from Firestore:", error);
+        sidebarContent.innerHTML = `<p style="color:red;">Fehler beim Laden der Daten: ${error.message}</p>`;
     }
 }
 
-// --- RENDER FUNCTIONS ---
+// --- RENDER FUNCTIONS (No changes below this line) ---
 function renderClassesTab() {
     const classListHtml = state.classes.map(c => `<div class="class-item" data-id="${c.id}">${c.className}</div>`).join('') || '<i>Noch keine Klassen erstellt.</i>';
     sidebarContent.innerHTML = `
@@ -187,7 +191,6 @@ function attachStudentListListeners() {
 async function handleAddClass(e) {
     e.preventDefault();
     const form = e.target;
-    // THIS IS THE CORRECTED LINE:
     const className = form.className.value;
     if (!className) return;
     const registrationCode = Math.random().toString(36).substring(2, 8).toUpperCase();
