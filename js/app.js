@@ -1,5 +1,6 @@
-// FILE: js/app.js (REPLACE entire file)
+// FILE: js/app.js (Final Version)
 
+import { printAnswers } from './printer.js';
 import { firebaseConfig } from './firebase-config.js';
 import { authenticate } from './auth.js';
 import { renderPage, loadAndRenderAnswers, setupQuillListeners } from './renderer.js';
@@ -10,6 +11,7 @@ const stepperNavEl = document.getElementById('stepper-nav');
 const stepperContentEl = document.getElementById('stepper-content');
 const prevStepBtn = document.getElementById('prev-step-btn');
 const nextStepBtn = document.getElementById('next-step-btn');
+const printBtn = document.getElementById('print-btn');
 
 // --- State Management ---
 let state = {
@@ -80,6 +82,12 @@ async function initializeApp() {
     }
 }
 
+// --- Event Listeners ---
 prevStepBtn.addEventListener('click', () => navigateToStep(state.currentStepIndex - 1));
 nextStepBtn.addEventListener('click', () => navigateToStep(state.currentStepIndex + 1));
+printBtn.addEventListener('click', () => {
+    printAnswers(state.assignmentData, state.firebaseUser.uid);
+});
+
+// --- App Initialization ---
 document.addEventListener('DOMContentLoaded', initializeApp);
