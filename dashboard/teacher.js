@@ -1,8 +1,8 @@
 // FILE: dashboard/teacher.js (Corrected Version)
 import { firebaseConfig } from '../js/firebase-config.js';
 
-// --- 1. THE CORRECT URL IS PLACED HERE ---
-const CREATE_USER_URL = 'https://get-all-submissions-305371665876.europe-west6.run.app/createUserAccount';
+// --- IMPORTANT: PASTE YOUR CLOUD FUNCTION URL HERE ---
+const CREATE_USER_URL = 'https://get-all-submissions-30537166-5876.europe-west6.run.app/createUserAccount';
 
 // --- INITIALIZE FIREBASE ---
 firebase.initializeApp(firebaseConfig);
@@ -187,7 +187,8 @@ function attachStudentListListeners() {
 async function handleAddClass(e) {
     e.preventDefault();
     const form = e.target;
-    const className = form.className..value;
+    // THIS IS THE CORRECTED LINE:
+    const className = form.className.value;
     if (!className) return;
     const registrationCode = Math.random().toString(36).substring(2, 8).toUpperCase();
     try {
@@ -210,7 +211,6 @@ async function handleAddStudent(e) {
         password: form.password.value,
     };
 
-    // --- 2. THE SAFETY CHECK NOW CORRECTLY LOOKS FOR THE PLACEHOLDER ---
     if (CREATE_USER_URL.includes('YOUR_CREATE_USER_FUNCTION_URL')) {
         alert('Konfigurationsfehler: Die URL der Cloud Function ist in teacher.js nicht festgelegt.');
         return;
