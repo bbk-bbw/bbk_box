@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aufgabe</title>
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<!-- FILE: index.html (REPLACE averything inside <body>) -->
+<body>
+    <div id="app-wrapper">
+        <!-- Sidebar for navigation will be generated here -->
+        <aside id="stepper-sidebar">
+            <h2 id="assignment-title">Lade Aufgabe...</h2>
+            <nav id="stepper-nav"></nav>
+        </aside>
+
+        <!-- Main content area for the current step -->
+        <main id="stepper-content-wrapper">
+            <div id="stepper-content"></div>
+
+            <!-- Navigation buttons -->
+            <div id="stepper-navigation-controls">
+                <button id="prev-step-btn">Zurück</button>
+                <button id="next-step-btn">Weiter</button>
+            </div>
+        </main>
+    </div>
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore-compat.js"></script>
+    <!-- Keep these scripts -->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <!-- We will refactor app.js next -->
+    <script src="js/app.js" type="module"></script>
+</body>
+</html>
