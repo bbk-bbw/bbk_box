@@ -33,6 +33,46 @@ const debouncedSave = debounce(async (userUid, assignmentId, pageId, elementId, 
     }
 }, 1500);
 
+// --- Presence Tracking Logic (NEW) ---
+let presenceInterval = null;
+
+export function startPresenceTracking(userUid, assignmentId, pageId) {
+    stopPresenceTracking(); // Clean up any existing interval
+    
+    const db = firebase.firestore();
+    const updatePresence = async () => {
+        try {
+            await db.collection('presence').doc(userUid).set({
+                assignmentId: assignmentId,
+                pageId: pageId,
+                lastActive: firebase.firestore.FieldValue.serverTimestamp(),
+                status: 'active'
+            }, { merge: true });
+        } catch (error) {
+            console.error("Presence update failed:", error);
+        }
+    };
+    
+    // Update immediately
+    updatePresence();
+    
+    // Then every 5 seconds
+    presenceInterval = setInterval(updatePresence, 5000);
+}
+
+export function stopPresenceTracking() {
+    if (presenceInterval) {
+        clearInterval(presenceInterval);
+        presenceInterval = null;
+    }
+}
+
+// Cleanup on page unload
+window.addEventListener('beforeunload', stopPresenceTracking);
+
+
+// --- Rendering Logic ---
+
 /**
  * Renders the static structure of a page.
  */

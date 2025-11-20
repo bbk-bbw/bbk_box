@@ -1,7 +1,7 @@
 // FILE: js/app.js
 import { printAnswers } from './printer.js';
 import { firebaseConfig } from './firebase-config.js';
-import { renderPage, loadAndRenderAnswers, setupQuillListeners } from './renderer.js';
+import { renderPage, loadAndRenderAnswers, setupQuillListeners, startPresenceTracking, stopPresenceTracking } from './renderer.js';
 
 // --- Initialize Firebase ---
 firebase.initializeApp(firebaseConfig);
@@ -33,11 +33,9 @@ auth.onAuthStateChanged(async (user) => {
         // User is signed out.
         console.log("User is not logged in. Redirecting...");
         
-        // --- ÄNDERUNG START ---
         // Wir kodieren die aktuelle URL (inklusive ?id=...) und geben sie weiter
         const returnUrl = encodeURIComponent(window.location.href);
         window.location.href = `login.html?redirect=${returnUrl}`;
-        // --- ÄNDERUNG ENDE ---
     }
 });
 
@@ -89,6 +87,10 @@ async function initializeApp() {
 
 async function navigateToStep(index) {
     if (!state.assignmentData || index < 0 || index >= state.assignmentData.pages.length) return;
+    
+    // Stop tracking previous page
+    stopPresenceTracking();
+
     state.currentStepIndex = index;
     const currentPageData = state.assignmentData.pages[index];
     
@@ -98,6 +100,9 @@ async function navigateToStep(index) {
     await loadAndRenderAnswers(state.firebaseUser.uid, state.assignmentId, currentPageData);
     setupQuillListeners(state.firebaseUser.uid, state.assignmentId, currentPageData);
     
+    // Start tracking new page
+    startPresenceTracking(state.firebaseUser.uid, state.assignmentId, currentPageData.id);
+
     updateSidebarActiveState();
     updateNavigationButtons();
 }

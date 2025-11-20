@@ -12,6 +12,7 @@ let state = {
     classes: [],
     users: [],
     submissions: {},
+    presenceData: {}, // NEW: Store presence data
     selectedClassId: null,
     selectedAssignmentId: null,
     selectedStudentId: null,
@@ -76,6 +77,22 @@ function initDashboard() {
         if (state.selectedStudentId && state.selectedAssignmentId) renderDetailView();
         if (state.selectedClassId && state.selectedAssignmentId) renderStudentList();
         renderNav();
+    });
+
+    // Listen to Presence (NEW)
+    initPresenceListener();
+}
+
+function initPresenceListener() {
+    db.collection('presence').onSnapshot(snap => {
+        state.presenceData = {};
+        snap.forEach(doc => {
+            state.presenceData[doc.id] = doc.data();
+        });
+        // Refresh student list if we're viewing one to update dots
+        if (state.selectedClassId) {
+            renderStudentList();
+        }
     });
 }
 
@@ -163,6 +180,8 @@ function renderStudentList() {
         return;
     }
 
+    const now = new Date();
+
     students.forEach(student => {
         const card = document.createElement('div');
         card.className = 'student-card';
@@ -171,18 +190,46 @@ function renderStudentList() {
         let statusText = 'Inaktiv';
         let statusClass = 'empty';
         
+        // --- PRESENCE LOGIC (NEW) ---
+        let presenceIndicator = '<span class="presence-indicator presence-idle" title="Offline"></span>';
+        let presenceText = '';
+        
+        const presence = state.presenceData[student.id];
+        if (presence && presence.lastActive) {
+            const lastActive = presence.lastActive.toDate();
+            const secondsAgo = (now - lastActive) / 1000;
+            
+            if (secondsAgo < 30) {
+                presenceIndicator = '<span class="presence-indicator presence-active" title="Aktiv"></span>';
+                presenceText = '<span class="meta-info">🟢 Gerade aktiv</span>';
+            } else if (secondsAgo < 300) { // 5 minutes
+                presenceIndicator = '<span class="presence-indicator presence-recent" title="Kürzlich aktiv"></span>';
+                const minAgo = Math.floor(secondsAgo / 60);
+                presenceText = `<span class="meta-info">🟡 Vor ${minAgo} Min.</span>`;
+            } else {
+                presenceText = '<span class="meta-info">⚫ Inaktiv</span>';
+            }
+        }
+
+        // Submission Count Logic
         if (state.selectedAssignmentId) {
             const sub = state.submissions[student.id];
             if (sub && sub[state.selectedAssignmentId]) {
                 const pages = sub[state.selectedAssignmentId];
                 let count = 0;
                 Object.values(pages).forEach(p => count += Object.keys(p).length);
-                statusText = `Aktiv (${count} Antworten)`;
+                statusText = `${count} Antworten`;
                 statusClass = 'active';
             }
         }
 
-        card.innerHTML = `<span class="name">${student.displayName}</span><span class="status ${statusClass}">${statusText}</span>`;
+        card.innerHTML = `
+            <div>
+                ${presenceIndicator}<span class="name">${student.displayName}</span>
+            </div>
+            <span class="status ${statusClass}">${statusText} ${presenceText}</span>
+        `;
+        
         card.addEventListener('click', () => {
             state.selectedStudentId = student.id;
             renderStudentList();
