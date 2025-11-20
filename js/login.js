@@ -56,7 +56,7 @@ signupForm.addEventListener('submit', async (e) => {
         });
 
         // 4. Redirect
-        window.location.href = 'index.html';
+        window.location.href = getRedirectUrl();
 
     } catch (error) {
         statusMessage.textContent = `Fehler: ${error.message}`;
@@ -73,7 +73,7 @@ loginForm.addEventListener('submit', async (e) => {
     try {
         statusMessage.textContent = 'Melde an...';
         await auth.signInWithEmailAndPassword(email, password);
-        window.location.href = 'index.html';
+        window.location.href = getRedirectUrl();
     } catch (error) {
         statusMessage.textContent = `Fehler: ${error.message}`;
     }
@@ -106,3 +106,12 @@ showLoginBtn.addEventListener('click', () => {
     loginView.style.display = 'block';
     statusMessage.textContent = '';
 });
+
+// FILE: js/login.js (Neue Hilfsfunktion)
+
+function getRedirectUrl() {
+    const params = new URLSearchParams(window.location.search);
+    const redirect = params.get('redirect');
+    // Wenn ein Redirect-Parameter da ist, nutze ihn. Sonst gehe zur Standard-Startseite.
+    return redirect ? decodeURIComponent(redirect) : 'index.html';
+}

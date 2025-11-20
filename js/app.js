@@ -24,16 +24,23 @@ let state = {
     firebaseUser: null,
 };
 
-// --- Auth State Listener ---
 auth.onAuthStateChanged(async (user) => {
     if (user) {
         console.log("User is logged in:", user.uid);
         state.firebaseUser = user;
         initializeApp();
     } else {
-        window.location.href = 'login.html';
+        // User is signed out.
+        console.log("User is not logged in. Redirecting...");
+        
+        // --- ÄNDERUNG START ---
+        // Wir kodieren die aktuelle URL (inklusive ?id=...) und geben sie weiter
+        const returnUrl = encodeURIComponent(window.location.href);
+        window.location.href = `login.html?redirect=${returnUrl}`;
+        // --- ÄNDERUNG ENDE ---
     }
 });
+
 
 // --- App Functions ---
 
