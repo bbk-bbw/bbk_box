@@ -1,4 +1,4 @@
-// FILE: js/login.js (NEW FILE)
+// FILE: js/login.js
 import { firebaseConfig } from './firebase-config.js';
 
 // --- Initialize Firebase ---
@@ -16,29 +16,46 @@ const showLoginBtn = document.getElementById('show-login');
 const forgotPasswordBtn = document.getElementById('forgot-password');
 const statusMessage = document.getElementById('status-message');
 
-// --- Event Handlers ---
-
-// Handle Sign Up
+// --- Handle Sign Up (Self-Registration) ---
 signupForm.addEventListener('submit', async (e) => {
     e.preventDefault();
+    
+    const codeInput = signupForm['signup-code'].value.trim().toUpperCase();
     const displayName = signupForm['signup-name'].value;
     const email = signupForm['signup-email'].value;
     const password = signupForm['signup-password'].value;
 
+    statusMessage.textContent = 'Prüfe Code...';
+
     try {
-        statusMessage.textContent = 'Konto wird erstellt...';
+        // 1. Verify the Class Code
+        const classQuery = await db.collection('classes')
+            .where('registrationCode', '==', codeInput)
+            .get();
+
+        if (classQuery.empty) {
+            throw new Error("Ungültiger Klassen-Code. Bitte überprüfen Sie die Eingabe.");
+        }
+
+        const classId = classQuery.docs[0].id;
+        const className = classQuery.docs[0].data().className;
+
+        statusMessage.textContent = `Code akzeptiert für "${className}". Erstelle Konto...`;
+
+        // 2. Create Auth User
         const userCredential = await auth.createUserWithEmailAndPassword(email, password);
         const user = userCredential.user;
 
-        // CRITICAL: Create a user profile document in Firestore
+        // 3. Create User Profile in Firestore linked to the Class
         await db.collection('users').doc(user.uid).set({
             displayName: displayName,
             email: email,
             role: 'student',
-            classId: null // No class assigned yet
+            classId: classId, // Automatically assigned!
+            registeredAt: new Date()
         });
 
-        // Redirect to the main app after successful signup and profile creation
+        // 4. Redirect
         window.location.href = 'index.html';
 
     } catch (error) {
@@ -47,7 +64,7 @@ signupForm.addEventListener('submit', async (e) => {
     }
 });
 
-// Handle Login
+// --- Handle Login ---
 loginForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const email = loginForm['login-email'].value;
@@ -56,15 +73,13 @@ loginForm.addEventListener('submit', async (e) => {
     try {
         statusMessage.textContent = 'Melde an...';
         await auth.signInWithEmailAndPassword(email, password);
-        // Redirect to the main app after successful login
         window.location.href = 'index.html';
     } catch (error) {
         statusMessage.textContent = `Fehler: ${error.message}`;
-        console.error("Login Error:", error);
     }
 });
 
-// Handle Password Reset
+// --- Handle Password Reset ---
 forgotPasswordBtn.addEventListener('click', async () => {
     const email = loginForm['login-email'].value;
     if (!email) {

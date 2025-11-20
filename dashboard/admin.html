@@ -1,0 +1,86 @@
+<!-- FILE: dashboard/admin.html -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LMS Verwaltung</title>
+    <link rel="stylesheet" href="teacher.css">
+    <style>
+        /* Admin specific overrides */
+        #admin-container { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding: 20px; height: 100vh; box-sizing: border-box; }
+        .admin-panel { background: white; border: 1px solid #e0e0e0; border-radius: 8px; display: flex; flex-direction: column; }
+        .panel-content { padding: 20px; overflow-y: auto; flex: 1; }
+        .form-box { background: #f8f9fa; padding: 15px; border-radius: 6px; margin-bottom: 20px; border: 1px solid #dee2e6; }
+        .form-box h4 { margin-top: 0; margin-bottom: 10px; }
+        .form-box input, .form-box select { width: 100%; padding: 8px; margin-bottom: 10px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; }
+        .list-item { padding: 10px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
+        .list-item:last-child { border-bottom: none; }
+        .header-bar { background: #343a40; color: white; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
+        .header-bar a { color: white; text-decoration: none; margin-right: 20px; }
+        .header-bar a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="header-bar">
+        <h2>LMS Verwaltung</h2>
+        <div>
+            <a href="teacher.html">← Zurück zum Monitor</a>
+            <button id="logout-btn" class="small-btn">Logout</button>
+        </div>
+    </div>
+
+    <div id="admin-container">
+        <!-- Left: Class Management -->
+        <div class="admin-panel">
+            <div class="pane-header"><h3>Klassen verwalten</h3></div>
+            <div class="panel-content">
+                <div class="form-box">
+                    <h4>Neue Klasse erstellen</h4>
+                    <form id="create-class-form">
+                        <input type="text" id="class-name" placeholder="Klassenname (z.B. 10A)" required>
+                        <button type="submit" class="action-btn">Klasse erstellen</button>
+                    </form>
+                </div>
+                <div id="class-list">
+                    <!-- List of classes goes here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Right: Student Management -->
+        <div class="admin-panel">
+            <div class="pane-header"><h3>Schüler verwalten</h3></div>
+            <div class="panel-content">
+                <div class="form-box">
+                    <h4>Neuen Schüler hinzufügen</h4>
+                    <form id="create-student-form">
+                        <select id="student-class-select" required>
+                            <option value="">Klasse wählen...</option>
+                        </select>
+                        <input type="text" id="student-name" placeholder="Vor- und Nachname" required>
+                        <input type="email" id="student-email" placeholder="E-Mail Adresse" required>
+                        <input type="text" id="student-pass" placeholder="Initialpasswort" required>
+                        <button type="submit" class="action-btn">Schüler erstellen</button>
+                    </form>
+                </div>
+                <div id="student-list-container">
+                    <h4>Schülerliste</h4>
+                    <select id="filter-class-select" style="width:100%; padding:8px; margin-bottom:10px;">
+                        <option value="">Alle Klassen anzeigen</option>
+                    </select>
+                    <div id="student-list">
+                        <!-- List of students goes here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore-compat.js"></script>
+    <script src="admin.js" type="module"></script>
+</body>
+</html>

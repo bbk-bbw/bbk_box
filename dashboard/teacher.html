@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LMS Teacher Dashboard</title>
+    <title>LMS Monitor</title>
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     <link rel="stylesheet" href="teacher.css">
 </head>
@@ -21,18 +21,17 @@
 
     <!-- Main Dashboard -->
     <div id="dashboard-container">
-        <!-- Pane 1: Navigation (Classes & Assignments) -->
+        <!-- Pane 1: Navigation -->
         <aside id="pane-nav">
             <div class="pane-header">
-                <h3>Klassen & Aufgaben</h3>
-                <button id="logout-btn" class="small-btn">Logout</button>
+                <h3>Live Monitor</h3>
+                <div style="display:flex; gap:5px;">
+                    <a href="admin.html" class="small-btn" style="text-decoration:none; background:#6c757d; color:white; display:inline-block; text-align:center;">Verwaltung</a>
+                    <button id="logout-btn" class="small-btn">Logout</button>
+                </div>
             </div>
             <div id="nav-content">
-                <!-- Dynamic Content Here -->
-                <p class="loading-text">Lade Klassen...</p>
-            </div>
-            <div class="pane-footer">
-                <button id="create-class-btn" class="action-btn">+ Neue Klasse</button>
+                <p class="loading-text">Lade Daten...</p>
             </div>
         </aside>
 
@@ -44,16 +43,12 @@
             <div id="student-list-content">
                 <p class="placeholder-text">Wählen Sie eine Aufgabe aus.</p>
             </div>
-            <div class="pane-footer">
-                <button id="add-student-btn" class="action-btn" disabled>+ Schüler hinzufügen</button>
-            </div>
         </aside>
 
-        <!-- Pane 3: Detail View (Answers) -->
+        <!-- Pane 3: Detail View -->
         <main id="pane-detail">
             <div id="detail-header">
                 <h2 id="detail-title">Ansicht</h2>
-                <span id="last-update-badge" style="display:none;">Live Updates aktiv</span>
             </div>
             <div id="detail-content">
                 <div class="empty-state">
@@ -63,18 +58,7 @@
         </main>
     </div>
 
-    <!-- Modals (Hidden by default) -->
-    <div id="modal-overlay" class="hidden">
-        <div class="modal-content">
-            <h3 id="modal-title">Titel</h3>
-            <div id="modal-body"></div>
-            <div class="modal-actions">
-                <button id="modal-close">Abbrechen</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Scripts -->
+    <!-- Firebase SDKs -->
     <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore-compat.js"></script>
