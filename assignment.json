@@ -1,6 +1,6 @@
 {
   "assignmentId": "komplexe-ausbildungsaufgabe-v2",
-  "assignmentTitle": "Komplexe Ausbildungsaufgabe",
+  "assignmentTitle": "blabla Ausbildungsaufgabe",
   "pages": [
     {
       "id": "aufgabe-und-ziele",
@@ -33,11 +33,41 @@
         },
         {
           "type": "quill",
+          "id": "q2_loesungswege",
+          "question": "Welche möglichen Lösungswege gibt es? Skizzieren Sie mindestens zwei Alternativen."
+        },        
+        {
+          "type": "quill",
           "id": "q3_ressourcen",
           "question": "Welche Materialien, Werkzeuge oder Informationen benötigen Sie für die Umsetzung?"
         }
       ]
     },
+    {
+      "id": "schritt-2-planung",
+      "title": "Schritt 2: Planung",
+      "elements": [
+        {
+          "type": "text",
+          "content": "<h3>Planungsphase</h3><p><strong>Überlegen</strong> Sie sich, welche Ressourcen Sie benötigen und welche potenziellen Hindernisse auftreten könnten.</p>"
+        },
+        {
+          "type": "quill",
+          "id": "q2_loesungswege",
+          "question": "Welche möglichen Lösungswege gibt es? Skizzieren Sie mindestens zwei Alternativen."
+        },
+        {
+          "type": "quill",
+          "id": "q2_loesungswege",
+          "question": "Welche möglichen Lösungswege gibt es? Skizzieren Sie mindestens zwei Alternativen."
+        },        
+        {
+          "type": "quill",
+          "id": "q3_ressourcen",
+          "question": "Welche Materialien, Werkzeuge oder Informationen benötigen Sie für die Umsetzung?"
+        }
+      ]
+    },    
     {
       "id": "reflexion",
       "title": "Reflexion",
