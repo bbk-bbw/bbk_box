@@ -1,4 +1,4 @@
-// FILE: js/renderer.js (REPLACE entire file)
+// FILE: js/renderer.js
 
 // --- Debounce Utility ---
 function debounce(func, wait) {
@@ -11,14 +11,23 @@ function debounce(func, wait) {
 }
 
 // --- Firestore Save Logic ---
-const debouncedSave = debounce(async (userUid, payload) => {
+// UPDATED: Now accepts assignmentId to nest data correctly
+const debouncedSave = debounce(async (userUid, assignmentId, pageId, elementId, content) => {
     try {
-        // Access the globally available 'firebase' object
         const db = firebase.firestore();
         const submissionRef = db.collection('submissions').doc(userUid);
         
+        // Create a nested object structure: { assignmentId: { pageId: { elementId: content } } }
+        const payload = {
+            [assignmentId]: {
+                [pageId]: {
+                    [elementId]: content
+                }
+            }
+        };
+        
         await submissionRef.set(payload, { merge: true });
-        console.log("Saved to Firestore:", payload);
+        console.log(`Saved [${assignmentId}]:`, payload);
     } catch (error) {
         console.error("Error saving to Firestore:", error);
     }
@@ -47,18 +56,23 @@ export function renderPage(pageObject, container) {
 
 /**
  * Loads data from Firestore and populates the Quill editors.
+ * UPDATED: Drills down into the specific assignmentId.
  */
-export async function loadAndRenderAnswers(userUid, pageObject) {
+export async function loadAndRenderAnswers(userUid, assignmentId, pageObject) {
     const db = firebase.firestore();
     const submissionRef = db.collection('submissions').doc(userUid);
     const doc = await submissionRef.get();
-    const data = doc.exists ? doc.data() : {};
+    
+    // Access data safely: doc -> assignmentId -> pageId -> elementId
+    const allData = doc.exists ? doc.data() : {};
+    const assignmentData = allData[assignmentId] || {};
+    const pageData = assignmentData[pageObject.id] || {};
 
     pageObject.elements.forEach(element => {
         if (element.type === 'quill') {
             const editorDiv = document.getElementById(`quill-editor-${element.id}`);
             if (editorDiv && editorDiv.__quill) {
-                const answer = data?.[pageObject.id]?.[element.id] || '';
+                const answer = pageData[element.id] || '';
                 if (answer) {
                     editorDiv.__quill.root.innerHTML = answer;
                 }
@@ -69,18 +83,17 @@ export async function loadAndRenderAnswers(userUid, pageObject) {
 
 /**
  * Attaches 'text-change' event listeners to all Quill editors on the page.
+ * UPDATED: Passes assignmentId to the save function.
  */
-export function setupQuillListeners(userUid, pageObject) {
+export function setupQuillListeners(userUid, assignmentId, pageObject) {
     pageObject.elements.forEach(element => {
         if (element.type === 'quill') {
             const editorDiv = document.getElementById(`quill-editor-${element.id}`);
             if (editorDiv && editorDiv.__quill) {
                 editorDiv.__quill.on('text-change', () => {
                     const content = editorDiv.__quill.root.innerHTML;
-                    const payload = {
-                        [pageObject.id]: { [element.id]: content }
-                    };
-                    debouncedSave(userUid, payload);
+                    // Call the updated save function
+                    debouncedSave(userUid, assignmentId, pageObject.id, element.id, content);
                 });
             }
         }

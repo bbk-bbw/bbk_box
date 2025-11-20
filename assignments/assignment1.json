@@ -1,0 +1,83 @@
+{
+  "assignmentId": "komplexe-ausbildungsaufgabe-v2",
+  "assignmentTitle": "blabla Ausbildungsaufgabe",
+  "pages": [
+    {
+      "id": "aufgabe-und-ziele",
+      "title": "Aufgabe und Ziele",
+      "helpText": "<p>Hier finden Sie zusätzliche Informationen zur Aufgabenstellung. Lesen Sie diese sorgfältig durch, bevor Sie beginnen.</p>",
+      "elements": [
+        {
+          "type": "text",
+          "content": "<h2>Aufgabenbeschreibung</h2><p>In dieser Aufgabe planen Sie einen vollständigen Arbeitsablauf. Beschreiben Sie die Ziele, die notwendigen Schritte und die erwarteten Ergebnisse. Dies ist eine Übung zur Vorbereitung auf Ihre Abschlussprüfung.</p>"
+        },
+        {
+          "type": "quill",
+          "id": "q1_beschreibung",
+          "question": "Beschreiben Sie in Ihren eigenen Worten das übergeordnete Ziel dieser Aufgabe."
+        }
+      ]
+    },
+    {
+      "id": "schritt-1-planung",
+      "title": "Schritt 1: Planung",
+      "elements": [
+        {
+          "type": "text",
+          "content": "<h3>Planungsphase</h3><p>Überlegen Sie sich, welche Ressourcen Sie benötigen und welche potenziellen Hindernisse auftreten könnten.</p>"
+        },
+        {
+          "type": "quill",
+          "id": "q2_loesungswege",
+          "question": "Welche möglichen Lösungswege gibt es? Skizzieren Sie mindestens zwei Alternativen."
+        },
+        {
+          "type": "quill",
+          "id": "q2_loesungswege",
+          "question": "Welche möglichen Lösungswege gibt es? Skizzieren Sie mindestens zwei Alternativen."
+        },        
+        {
+          "type": "quill",
+          "id": "q3_ressourcen",
+          "question": "Welche Materialien, Werkzeuge oder Informationen benötigen Sie für die Umsetzung?"
+        }
+      ]
+    },
+    {
+      "id": "schritt-2-planung",
+      "title": "Schritt 2: Planung",
+      "elements": [
+        {
+          "type": "text",
+          "content": "<h3>Planungsphase</h3><p><strong>Überlegen</strong> Sie sich, welche Ressourcen Sie benötigen und welche potenziellen Hindernisse auftreten könnten.</p>"
+        },
+        {
+          "type": "quill",
+          "id": "q2_loesungswege",
+          "question": "Welche möglichen Lösungswege gibt es? Skizzieren Sie mindestens zwei Alternativen."
+        },
+        {
+          "type": "quill",
+          "id": "q2_loesungswege",
+          "question": "Welche möglichen Lösungswege gibt es? Skizzieren Sie mindestens zwei Alternativen."
+        },        
+        {
+          "type": "quill",
+          "id": "q3_ressourcen",
+          "question": "Welche Materialien, Werkzeuge oder Informationen benötigen Sie für die Umsetzung?"
+        }
+      ]
+    },    
+    {
+      "id": "reflexion",
+      "title": "Reflexion",
+      "elements": [
+        {
+          "type": "quill",
+          "id": "q4_reflexion",
+          "question": "Was haben Sie in diesem Prozess gelernt? Was würden Sie beim nächsten Mal anders machen?"
+        }
+      ]
+    }
+  ]
+}

@@ -1,9 +1,7 @@
-// FILE: js/printer.js (REPLACE entire file)
+// FILE: js/printer.js
 
 /**
  * Fetches the student's complete submission from Firestore.
- * @param {string} userUid The Firebase user's unique ID.
- * @returns {Promise<object>} The student's submission data.
  */
 async function getSubmissionData(userUid) {
     try {
@@ -19,19 +17,19 @@ async function getSubmissionData(userUid) {
 
 /**
  * Generates the complete HTML content for the print window.
- * @param {object} assignmentData The assignment structure from assignment.json.
- * @param {object} submissionData The student's answers from Firestore.
- * @returns {string} The complete HTML for the print window.
  */
-function generatePrintHTML(assignmentData, submissionData) {
+function generatePrintHTML(assignmentData, assignmentSpecificAnswers) {
     let bodyContent = `<h1>${assignmentData.assignmentTitle}</h1><hr>`;
 
     assignmentData.pages.forEach(page => {
         bodyContent += `<div class="page-section"><h2>${page.title}</h2>`;
         
+        // Get answers for this specific page
+        const pageAnswers = assignmentSpecificAnswers[page.id] || {};
+
         page.elements.forEach(element => {
             if (element.type === 'quill') {
-                const answer = submissionData?.[page.id]?.[element.id] || '<p><i>Keine Antwort abgegeben.</i></p>';
+                const answer = pageAnswers[element.id] || '<p><i>Keine Antwort abgegeben.</i></p>';
                 bodyContent += `
                     <div class="question-answer-pair">
                         <p class="question-text">${element.question}</p>
@@ -64,17 +62,19 @@ function generatePrintHTML(assignmentData, submissionData) {
 
 /**
  * Main function to orchestrate the printing process.
- * @param {object} assignmentData The main assignment structure.
- * @param {string} userUid The current user's ID.
+ * UPDATED: Accepts assignmentId to filter data.
  */
-export async function printAnswers(assignmentData, userUid) {
-    if (!assignmentData || !userUid) {
-        alert("Fehler: Aufgabendaten oder Benutzer-ID fehlen.");
+export async function printAnswers(assignmentData, userUid, assignmentId) {
+    if (!assignmentData || !userUid || !assignmentId) {
+        alert("Fehler: Aufgabendaten oder IDs fehlen.");
         return;
     }
 
-    const submissionData = await getSubmissionData(userUid);
-    const htmlContent = generatePrintHTML(assignmentData, submissionData);
+    const fullSubmissionData = await getSubmissionData(userUid);
+    // Extract only the answers for the current assignment
+    const assignmentSpecificAnswers = fullSubmissionData[assignmentId] || {};
+
+    const htmlContent = generatePrintHTML(assignmentData, assignmentSpecificAnswers);
 
     const printWindow = window.open('', '_blank');
     if (!printWindow) {
