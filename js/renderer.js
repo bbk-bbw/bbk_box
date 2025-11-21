@@ -80,10 +80,18 @@ export function renderPage(pageObject, container) {
     container.innerHTML = '';
 
     if (pageObject.helpText) {
-        const details = document.createElement('details');
-        details.innerHTML = `<summary>Weitere Informationen</summary>${pageObject.helpText}`;
-        container.appendChild(details);
-    }
+            const details = document.createElement('details');
+            // Add a class for styling
+            details.className = 'info-callout'; 
+            // Add Emoji and wrap the content in a div for better padding control
+            details.innerHTML = `
+                <summary>💡 Weitere Informationen / Hinweise</summary>
+                <div class="info-content">
+                    ${pageObject.helpText}
+                </div>
+            `;
+            container.appendChild(details);
+        }
 
     pageObject.elements.forEach(element => {
         if (element.type === 'text') {

@@ -1,0 +1,158 @@
+{
+  "source": "[SRF Kontext: Das pubertierende Gehirn](https://www.srf.ch/audio/kontext/das-pubertierende-gehirn?id=2522ea9c-5a4f-4473-9376-4d2fbf6e2b47)",
+  "mp3": "https://download-media.srf.ch/world/audio/Kontext_radio/2011/04/Kontext-radio_a693fcdd9a8940ee868be6a4d453b6c1.mp3",
+  "entries": [
+    {
+      "timestamp": "00_00",
+      "layout": "title",
+      "concept": "SRF Kontext",
+      "image_filename": "",
+      "explanation": "Das pubertierende Gehirn",
+      "slide_content": "Eine Neurowissenschaftliche Reise durch die Adoleszenz",
+      "additional_cards": [
+        {
+          "title": "Über die Sendung",
+          "content": "Diese Ausgabe von **SRF Kontext** aus dem Jahr 2011 beleuchtet die Diskrepanz zwischen körperlicher Reife und geistiger Entwicklung bei Jugendlichen. Zu Wort kommen der Zürcher Neuropsychologe **Lutz Jäncke** und der US-Psychologe **Laurence Steinberg**."
+        }
+      ]
+    },
+    {
+      "timestamp": "00_43",
+      "layout": "classic_bullet_point",
+      "concept": "Typische Verhaltensmuster",
+      "image_filename": "mood_swings.png",
+      "explanation": "Erwachsenwerden ist eine emotionale Achterbahnfahrt.",
+      "slide_content": "- **Himmelhoch jauchzend, zu Tode betrübt**: Extreme Stimmungsschwankungen.\n- **Konflikte**: Streit um Themen wie Taschengeld.\n- **Risikoverhalten**: Exzessiver Alkoholkonsum oder Leichtsinn.\n- **Sprunghaftigkeit**: Lebenspläne werden entworfen und sofort verworfen.",
+      "additional_cards": []
+    },
+    {
+      "timestamp": "02_30",
+      "layout": "classic_bullet_point",
+      "concept": "Die Großbaustelle Gehirn",
+      "image_filename": "brain_scan.png",
+      "explanation": "Das jugendliche Gehirn reift **ungleichmäßig**.",
+      "slide_content": "- Nicht alle Strukturen bilden sich gleichzeitig aus.\n- Areale für Sensorik/Motorik sind oft schon fertig (10-12 Jahre).\n- Der **Frontalkortex** (Stirnhirn) hinkt in der Entwicklung hinterher.\n- Reifungsprozess dauert bis Mitte 20.",
+      "additional_cards": [
+        {
+          "title": "Synaptic Pruning",
+          "content": "Der Begriff 'Baustelle' bezieht sich oft auf das **Synaptic Pruning** (Synapseneliminierung). In der Pubertät wird das Gehirn effizienter, indem es ungenutzte Nervenverbindungen (Synapsen) radikal abbaut ('Use it or lose it') und die verbleibenden Verbindungen schneller macht (Myelinisierung)."
+        }
+      ]
+    },
+    {
+      "timestamp": "03_35",
+      "layout": "key_definition",
+      "concept": "Der Dirigent",
+      "image_filename": "conductor.png",
+      "explanation": "Zentrale Funktion",
+      "slide_content": "Begriff: Der Frontalkortex (Stirnhirn)\nDefinition: Der 'Dirigent' des Gehirns. Zuständig für Impulskontrolle, Planung, Aufmerksamkeit und das Hemmen von Emotionen.",
+      "additional_cards": [
+        {
+          "title": "Exekutive Funktionen",
+          "content": "Der Frontalkortex ist der Sitz der **exekutiven Funktionen**. Dazu gehören:\n1. Arbeitsgedächtnis\n2. Kognitive Flexibilität (Perspektivwechsel)\n3. Inhibitorische Kontrolle (Impulsunterdrückung)"
+        }
+      ]
+    },
+    {
+      "timestamp": "05_34",
+      "layout": "visual_metaphor",
+      "concept": "Biologische Grenzen",
+      "image_filename": "baby_steps.png",
+      "explanation": "Man kann von Kindern nichts verlangen, wozu das Gehirn physisch noch nicht fähig ist.",
+      "slide_content": "Vergleich mit dem **Schließmuskel** bei Kleinkindern:\nSo wie ein Baby den Muskel nicht bewusst kontrollieren kann, können Teenager ihre Impulse oft noch nicht bewusst steuern.\nEs ist keine Böswilligkeit, sondern fehlende Reife.",
+      "additional_cards": []
+    },
+    {
+      "timestamp": "06_50",
+      "layout": "a_vs_b",
+      "concept": "Das emotionale Konzert",
+      "image_filename": "emotions.png",
+      "explanation": "Ohne die Hemmung durch das Stirnhirn übernehmen zwei Zentren die Kontrolle:",
+      "slide_content": "Nucleus Accumbens (Lustzentrum)\nReagiert extrem stark auf Belohnung, Kicks und angenehme Reize.\n---\nAmygdala (Emotionszentrum)\nZuständig für negative Gefühle, Angst und Fluchtinstinkte.",
+      "additional_cards": [
+        {
+          "title": "Dual Systems Model",
+          "content": "Laurence Steinberg prägte das **Dual Systems Model**: Das *Sozio-emotionale System* (Gaspedal) ist in der Pubertät bereits hochaktiv, während das *Kognitive Kontrollsystem* (Bremse) noch nicht fertig gebaut ist. Das Ergebnis: Ein Ferrari-Motor mit Fahrradbremsen."
+        }
+      ]
+    },
+    {
+      "timestamp": "09_10",
+      "layout": "classic_bullet_point",
+      "concept": "Risiko & Belohnung",
+      "image_filename": "risk.png",
+      "explanation": "Warum gehen Jugendliche Risiken ein, die sie theoretisch verstehen?",
+      "slide_content": "- Sensibilität für **kurzfristige Belohnung** (Adrenalinkick) ist extrem hoch.\n- Langfristige Risiken werden ausgeblendet.\n- Die theoretische Einsicht ist da, aber die körperliche Gier nach dem 'Kick' siegt.",
+      "additional_cards": [
+        {
+          "title": "Cold vs. Hot Cognition",
+          "content": "Forscher unterscheiden zwischen **Cold Cognition** (rationales Denken ohne Druck, z.B. im Labor) und **Hot Cognition** (Denken unter emotionaler Erregung/Gruppendruck). Jugendliche sind in 'Cold'-Situationen so klug wie Erwachsene, brechen aber in 'Hot'-Situationen oft ein."
+        }
+      ]
+    },
+    {
+      "timestamp": "10_00",
+      "layout": "timeline",
+      "concept": "Moralentwicklung",
+      "image_filename": "morality.png",
+      "explanation": "Wie entscheiden wir, was 'richtig' oder 'falsch' ist?",
+      "slide_content": "Bis 10 Jahre: Orientierung an Belohnung & Bestrafung\nTeenager: Orientierung an sozialen Normen der Gruppe (Peer Pressure)\nAb Mitte 20: Universelle ethische Prinzipien & Perspektivenübernahme",
+      "additional_cards": []
+    },
+    {
+      "timestamp": "12_00",
+      "layout": "classic_bullet_point",
+      "concept": "Herausforderung Schule",
+      "image_filename": "school.png",
+      "explanation": "Lernen fällt in der Pubertät oft schwer, weil der 'Filter' fehlt.",
+      "slide_content": "- **Konzentrationsmangel**: Schwierigkeit, Distraktoren (Ablenkungen) auszublenden.\n- **Multitasking**: Jugendliche sind *nicht* gut darin (z.B. Lernen + Chatten).\n- **Kritik am System**: Lebensentscheidende Prüfungen in der Phase des 'totalen Umbaus' sind neurobiologisch fragwürdig.",
+      "additional_cards": []
+    },
+    {
+      "timestamp": "15_23",
+      "layout": "quote",
+      "concept": "Kreativität",
+      "image_filename": "creativity.png",
+      "explanation": "Der Vorteil des unreifen Gehirns:",
+      "slide_content": "Je weniger Aktivität im kontrollierenden Frontalkortex, desto freier kann sich das Gehirn entfalten. Jugendliche sind oft kreativer, weil sie weniger gehemmt sind.",
+      "additional_cards": []
+    },
+    {
+      "timestamp": "17_56",
+      "layout": "classic_bullet_point",
+      "concept": "Anlage vs. Umwelt",
+      "image_filename": "environment.png",
+      "explanation": "Lawrence Steinberg: Biologie ist kein Schicksal.",
+      "slide_content": "- Hirnreifung ist ein Zusammenspiel aus Biologie und Erfahrung.\n- Wenn wir von Jugendlichen kein reifes Verhalten erwarten, geben wir ihnen auch keine Chance, es zu üben.\n- **Erfahrungen** können den Reifungsprozess beschleunigen oder bremsen.",
+      "additional_cards": [
+        {
+          "title": "Bio: Laurence Steinberg",
+          "content": "Steinberg ist Professor an der Temple University (USA) und Autor des Bestsellers *'Age of Opportunity'*. Er argumentiert, dass die Adoleszenz keine Phase des bloßen 'Überlebens' ist, sondern ein kritisches Fenster für enorme Lernfähigkeit (**Plastizität**)."
+        }
+      ]
+    },
+    {
+      "timestamp": "21_28",
+      "layout": "question_prompt",
+      "concept": "Recht & Verantwortung",
+      "image_filename": "gavel.png",
+      "explanation": "Implikationen für das Strafrecht",
+      "slide_content": "Sollten Jugendliche für gleiche Taten genauso bestraft werden wie Erwachsene, obwohl ihr Gehirn noch nicht ausgereift ist?",
+      "additional_cards": [
+        {
+          "title": "Roper v. Simmons (2005)",
+          "content": "Laurence Steinbergs Forschung beeinflusste den **US Supreme Court** im Fall *Roper v. Simmons*. Das Gericht entschied, dass die Todesstrafe für Minderjährige verfassungswidrig ist, da sie aufgrund ihrer Gehirnentwicklung nicht die volle moralische Schuld tragen können wie Erwachsene."
+        }
+      ]
+    },
+    {
+      "timestamp": "23_10",
+      "layout": "classic_bullet_point",
+      "concept": "Fazit für die Erziehung",
+      "image_filename": "parents.png",
+      "explanation": "Wie sollten Eltern und Gesellschaft reagieren?",
+      "slide_content": "- **Kein Laissez-faire**: Grenzen sind wichtig.\n- **Anleitung**: Jugendliche müssen lernen, ihre 'atavistischen Gefühle' in den Griff zu bekommen.\n- **Geduld**: Akzeptanz, dass der Umbau Zeit braucht (bis weit in die 20er).",
+      "additional_cards": []
+    }
+  ]
+}

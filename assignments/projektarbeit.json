@@ -1,0 +1,70 @@
+{
+  "assignmentId": "phase-1-theorie-baukasten",
+  "assignmentTitle": "Phase 1: Der Theorie-Baukasten",
+  "pages": [
+    {
+      "id": "p1_taxonomie",
+      "title": "1. Komplexität definieren",
+      "helpText": "<h4>Hilfe zur Taxonomie</h4><p><b>K1/K2 (Wissen/Verstehen):</b> Der Lernende gibt nur wieder. <br><i>Beispiel: 'Nenne die Teile einer Maschine.'</i></p><p><b>K3/K4 (Anwendung/Analyse):</b> Der Lernende muss Wissen auf neue Situationen übertragen oder Probleme zerlegen.<br><i>Beispiel: 'Plane einen Wartungsablauf für Maschine X.'</i></p><p><b>K5/K6 (Synthese/Beurteilung):</b> Der Lernende erschafft etwas Neues oder bewertet komplexe Sachverhalte.<br><i>Beispiel: 'Entwickle einen Optimierungsvorschlag.'</i></p>",
+      "elements": [
+        {
+          "type": "text",
+          "content": "<h3>Das Niveau bestimmen (Handbuch Kapitel 4.7)</h3><p>Ein echtes Projekt unterscheidet sich von einer Routineaufgabe durch die Komplexität. Es reicht nicht, wenn der Lernende nur etwas auswendig Gelerntes wiedergibt (K1).</p><p>Bitte öffnen Sie das <b>Handbuch Kapitel 4.7 (Taxonomie von Lernzielen)</b>.</p><p>Suchen Sie in der Tabelle nach Verben der Stufen <b>K3 (Anwendung)</b> bis <b>K6 (Beurteilung)</b>.</p>"
+        },
+        {
+          "type": "quill",
+          "id": "q1_verben",
+          "question": "Wählen Sie 3 Verben aus den Stufen K3 bis K6, die typisch für Ihren Beruf sind (z.B. 'planen', 'analysieren', 'bewerten', 'entwickeln'). Notieren Sie diese hier:"
+        }
+      ]
+    },
+    {
+      "id": "p2_beurteilung",
+      "title": "2. Begleiten statt Prüfen",
+      "helpText": "<h4>Formativ vs. Summativ</h4><p><b>Formativ:</b> Findet WÄHREND des Prozesses statt. Ziel ist die Lenkung und Förderung. Fehler sind erlaubt und Lernchancen.</p><p><b>Summativ:</b> Findet AM ENDE statt. Ziel ist die Benotung und Qualifikation (Bestanden/Nicht bestanden).</p>",
+      "elements": [
+        {
+          "type": "text",
+          "content": "<h3>Formative Beurteilung (Handbuch Kapitel 4.6)</h3><p>In der Projektarbeit wechseln Sie die Rolle vom Instrukteur zum Coach. Das wichtigste Werkzeug hierfür ist die <b>formative Beurteilung</b> (siehe Tabelle in Kapitel 4.6).</p><p>Ziel ist es, den Lernenden durch Fragen zum Nachdenken anzuregen, anstatt ihm die Lösung vorzugeben.</p>"
+        },
+        {
+          "type": "quill",
+          "id": "q2_formative_frage",
+          "question": "Formulieren Sie eine offene Coaching-Frage, die Sie einem Lernenden stellen würden, der gerade feststeckt. (Vermeiden Sie Ja/Nein-Fragen oder direkte Lösungen)."
+        }
+      ]
+    },
+    {
+      "id": "p3_reflexion",
+      "title": "3. Nachdenken anregen",
+      "helpText": "<h4>Bereiche der Selbstreflexion</h4><p>Laut Kapitel 4.5 kann man über verschiedene Ebenen nachdenken:</p><ul><li><b>Lerntechnik:</b> 'Habe ich mir realistische Ziele gesetzt?'</li><li><b>Arbeitshaltung:</b> 'War ich gut motiviert? Habe ich konzentriert gearbeitet?'</li><li><b>Fachwissen:</b> 'Wo hatte ich Wissenslücken?'</li></ul>",
+      "elements": [
+        {
+          "type": "text",
+          "content": "<h3>Selbstreflexion (Handbuch Kapitel 4.5)</h3><p>Lernen geschieht nicht durch das Tun allein, sondern durch das Nachdenken über das Tun. Besonders bei Projekten ist die Selbstreflexion essenziell.</p><p>Werfen Sie einen Blick auf die Tabellen in <b>Handbuch Kapitel 4.5</b> (besonders 'Selbstreflexion der lernschwächeren Jugendlichen').</p>"
+        },
+        {
+          "type": "quill",
+          "id": "q3_reflexionsfrage",
+          "question": "Wählen Sie einen Bereich (z.B. Lerntechnik oder Arbeitshaltung) und notieren Sie eine konkrete Frage zur Selbstreflexion, die der Lernende am Ende des Projekts beantworten muss."
+        }
+      ]
+    },
+    {
+      "id": "p4_rahmen",
+      "title": "4. Die Projektidee",
+      "helpText": "<h4>Checkliste Projektauftrag</h4><p>Ein gutes Projekt ist:</p><ul><li><b>Einmalig</b> (keine tägliche Routine)</li><li><b>Zeitlich begrenzt</b> (Start & Ende)</li><li><b>Zielorientiert</b> (ein Ergebnis entsteht)</li><li><b>Komplex</b> (erfordert eigene Planung)</li></ul>",
+      "elements": [
+        {
+          "type": "text",
+          "content": "<h3>Der Projektrahmen (Handbuch Kapitel 4.3)</h3><p>Bevor wir in die Detailplanung gehen, brauchen wir eine Grundidee. Erinnern Sie sich an die Abgrenzung zur Routinearbeit.</p><p>Lesen Sie kurz den Abschnitt <b>'Projekte in der betrieblichen Grundbildung'</b> in Kapitel 4.3.</p>"
+        },
+        {
+          "type": "quill",
+          "id": "q4_projektidee",
+          "question": "Notieren Sie stichwortartig eine konkrete Projektidee aus Ihrem Betrieb, die Sie gleich in der nächsten Phase detailliert ausarbeiten wollen."
+        }
+      ]
+    }
+  ]
+}

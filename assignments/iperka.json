@@ -1,0 +1,122 @@
+{
+  "assignmentId": "phase-2-iperka-planer",
+  "assignmentTitle": "Phase 2: Der IPERKA-Planer",
+  "pages": [
+    {
+      "id": "step_1_informieren",
+      "title": "1. Informieren",
+      "helpText": "<h4>Tipp zur Zielsetzung</h4><p>Vermeiden Sie Verben wie 'kennen' oder 'wissen'. Nutzen Sie handlungsorientierte Verben wie 'herstellen', 'organisieren', 'analysieren'.</p><p>Die Fragen des Lernenden helfen Ihnen zu prüfen, ob Sie alle Infos bereitgestellt haben (Budget, Deadline, Ansprechpartner).</p>",
+      "elements": [
+        {
+          "type": "text",
+          "content": "<h3>Schritt 1: Informieren & Zielsetzung</h3><p>Definieren Sie das Projektziel. <b>Wichtig:</b> Nutzen Sie eines der anspruchsvollen Verben (K3-K6), die Sie im Theorie-Baukasten gesammelt haben, um das Niveau hoch zu halten.</p>"
+        },
+        {
+          "type": "quill",
+          "id": "q_p2_projektname",
+          "question": "Projektname:"
+        },
+        {
+          "type": "quill",
+          "id": "q_p2_zielbeschreibung",
+          "question": "Zielbeschreibung (Was soll am Ende entstehen?):"
+        },
+        {
+          "type": "quill",
+          "id": "q_p2_fragen_lernender",
+          "question": "Versetzen Sie sich in den Lernenden: Welche 5 Fragen muss er stellen, um alle nötigen Informationen zu haben?"
+        }
+      ]
+    },
+    {
+      "id": "step_2_planen",
+      "title": "2. Planen",
+      "helpText": "<h4>Förderung der 4Ks</h4><p>Hier fördern Sie <b>Kreativität</b> und <b>Kritisches Denken</b>. Wenn Sie nur einen Weg vorgeben, ist es eine Instruktion, kein Projekt.</p><p>Lassen Sie den Lernenden Alternativen abwägen.</p>",
+      "elements": [
+        {
+          "type": "text",
+          "content": "<h3>Schritt 2: Planen</h3><p>Ein Projekt lebt davon, dass der Lernende eigene Wege geht. Geben Sie keine Lösung vor.</p><p>Skizzieren Sie kurz zwei mögliche Lösungswege, die der Lernende entwickeln könnte (oder die Sie ihm zur Auswahl stellen).</p>"
+        },
+        {
+          "type": "quill",
+          "id": "q_p2_loesungsweg_a",
+          "question": "Möglicher Lösungsweg A:"
+        },
+        {
+          "type": "quill",
+          "id": "q_p2_loesungsweg_b",
+          "question": "Möglicher Lösungsweg B:"
+        }
+      ]
+    },
+    {
+      "id": "step_3_entscheiden",
+      "title": "3. Entscheiden",
+      "helpText": "<h4>Entscheidungskompetenz</h4><p>Der Lernende soll nicht raten, sondern begründen. Typische Kriterien sind:</p><ul><li><b>Kosten:</b> Ist es im Budget?</li><li><b>Zeit:</b> Ist es bis zur Deadline machbar?</li><li><b>Qualität:</b> Erfüllt es die Kundenwünsche?</li><li><b>Ressourcen:</b> Haben wir das Werkzeug/Material?</li></ul>",
+      "elements": [
+        {
+          "type": "text",
+          "content": "<h3>Schritt 3: Entscheiden</h3><p>Der Lernende soll sich begründet für einen der Lösungswege entscheiden. Damit er das kann, braucht er Kriterien.</p>"
+        },
+        {
+          "type": "quill",
+          "id": "q_p2_entscheidungskriterien",
+          "question": "Welche 3 Kriterien geben Sie dem Lernenden an die Hand, um sich für einen Lösungsweg zu entscheiden?"
+        }
+      ]
+    },
+    {
+      "id": "step_4_realisieren",
+      "title": "4. Realisieren",
+      "helpText": "<h4>Rolle des Coaches</h4><p>Greifen Sie nicht sofort ein, wenn ein Fehler passiert. Lassen Sie den Lernenden die Erfahrung machen, solange keine Gefahr besteht oder teures Material zerstört wird.</p><p>Seien Sie 'Partner', nicht 'Aufpasser'.</p>",
+      "elements": [
+        {
+          "type": "text",
+          "content": "<h3>Schritt 4: Realisieren</h3><p>Hier arbeiten Sie als Coach im Hintergrund. Überlegen Sie im Voraus, wo es schwierig werden könnte.</p>"
+        },
+        {
+          "type": "quill",
+          "id": "q_p2_stolpersteine",
+          "question": "Wo wird es schwierig? Definieren Sie 3 Stolpersteine, bei denen Sie als Coach bereitstehen müssen."
+        }
+      ]
+    },
+    {
+      "id": "step_5_kontrollieren",
+      "title": "5. Kontrollieren",
+      "helpText": "<h4>Formative Beurteilung</h4><p>Nutzen Sie Fragen wie:</p><ul><li>'Wie kommst du voran?'</li><li>'Was würdest du beim nächsten Schritt anders machen?'</li><li>'Erklär mir kurz deinen Plan.'</li></ul><p>Vermeiden Sie: 'Das ist falsch, mach es so.'</p>",
+      "elements": [
+        {
+          "type": "text",
+          "content": "<h3>Schritt 5: Kontrollieren (Formative Beurteilung)</h3><p>Planen Sie einen Meilenstein-Check während der Arbeit.</p><p><b>Wichtig:</b> Nutzen Sie hier Ihre <b>formative Frage</b> aus dem Theorie-Baukasten, um den Lernenden zum Nachdenken zu bringen, ohne die Lösung zu verraten.</p>"
+        },
+        {
+          "type": "quill",
+          "id": "q_p2_kontrolle_coaching",
+          "question": "Wann findet die Kontrolle statt und welche Coaching-Frage stellen Sie?"
+        }
+      ]
+    },
+    {
+      "id": "step_6_auswerten",
+      "title": "6. Auswerten",
+      "helpText": "<h4>Reflexion vs. Bewertung</h4><p><b>Selbstreflexion:</b> Der Lernende denkt über sich nach (Ich-Botschaften).</p><p><b>Summative Bewertung:</b> Der Berufsbildner bewertet das Ergebnis anhand harter Fakten (Masse, Funktion, Sauberkeit).</p>",
+      "elements": [
+        {
+          "type": "text",
+          "content": "<h3>Schritt 6: Auswerten & Reflektieren</h3><p>Das Projekt ist abgeschlossen. Jetzt geht es um den Lerneffekt (Reflexion) und das Ergebnis (Bewertung).</p>"
+        },
+        {
+          "type": "quill",
+          "id": "q_p2_selbstreflexion",
+          "question": "Nutzen Sie Ihre Reflexionsfrage aus dem Theorie-Baukasten (Kap 4.5): Welche Frage muss der Lernende über sich selbst beantworten?"
+        },
+        {
+          "type": "quill",
+          "id": "q_p2_summativ",
+          "question": "Summative Beurteilung: Welche harten Kriterien nutzen Sie, um das Endprodukt zu bewerten (z.B. Masshaltigkeit, Funktion)?"
+        }
+      ]
+    }
+  ]
+}

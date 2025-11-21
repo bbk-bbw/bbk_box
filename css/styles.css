@@ -201,3 +201,57 @@ html, body {
     font-weight: 500;
     margin-bottom: 0.8em;
 }
+
+/* --- Info Callout Styles --- */
+.info-callout {
+    background-color: #e3f2fd; /* Light blue background */
+    border: 1px solid #bbdefb;
+    border-left: 5px solid #2196f3; /* Thicker blue accent on the left */
+    border-radius: 4px;
+    margin-bottom: 2em;
+    overflow: hidden; /* Keeps content inside rounded corners */
+    transition: background-color 0.2s ease;
+}
+
+.info-callout:hover {
+    background-color: #d1e9fc; /* Slightly darker on hover */
+}
+
+.info-callout summary {
+    padding: 12px 15px;
+    font-weight: 600;
+    color: #0d47a1; /* Dark blue text */
+    cursor: pointer;
+    list-style: none; /* Optional: hides standard arrow in some browsers */
+    user-select: none;
+    display: flex;
+    align-items: center;
+}
+
+/* Optional: Custom arrow indicator */
+.info-callout summary::after {
+    content: '▼';
+    font-size: 0.8em;
+    margin-left: auto; /* Pushes arrow to the right */
+    transition: transform 0.2s;
+}
+
+.info-callout[open] summary::after {
+    transform: rotate(180deg);
+}
+
+/* The actual help text inside */
+.info-content {
+    padding: 0 15px 15px 15px;
+    color: #37474f;
+    line-height: 1.6;
+    border-top: 1px solid rgba(33, 150, 243, 0.1); /* Subtle separator */
+    margin-top: 5px;
+    padding-top: 10px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
