@@ -16,7 +16,8 @@ let state = {
     selectedClassId: null,
     selectedAssignmentId: null,
     selectedStudentId: null,
-    assignmentDefinitions: {} 
+    assignmentDefinitions: {},
+    selectedPageIndex: 0
 };
 
 // --- DOM ELEMENTS ---
@@ -26,7 +27,16 @@ const els = {
     studentListContent: document.getElementById('student-list-content'),
     detailContent: document.getElementById('detail-content'),
     detailTitle: document.getElementById('detail-title'),
-    studentListTitle: document.getElementById('student-list-title')
+    studentListTitle: document.getElementById('student-list-title'),
+    studentControls: document.getElementById('student-controls'),
+    prevStudentBtn: document.getElementById('prev-student-btn'),
+    nextStudentBtn: document.getElementById('next-student-btn'),
+    studentIndicator: document.getElementById('student-indicator'),
+    stepControls: document.getElementById('step-controls'),
+    prevPageBtn: document.getElementById('prev-page-btn'),
+    nextPageBtn: document.getElementById('next-page-btn'),
+    pageIndicator: document.getElementById('page-indicator'),
+    pageSelect: document.getElementById('page-select')
 };
 
 // --- AUTHENTICATION ---
@@ -53,6 +63,38 @@ document.getElementById('login-btn').addEventListener('click', () => {
 });
 
 document.getElementById('logout-btn').addEventListener('click', () => auth.signOut());
+els.prevPageBtn.addEventListener('click', () => {
+    const definition = state.assignmentDefinitions[state.selectedAssignmentId];
+    if (!definition || state.selectedPageIndex <= 0) return;
+    state.selectedPageIndex -= 1;
+    renderDetailView();
+});
+els.prevStudentBtn.addEventListener('click', () => {
+    navigateStudent(-1);
+});
+els.nextStudentBtn.addEventListener('click', () => {
+    navigateStudent(1);
+});
+els.nextPageBtn.addEventListener('click', () => {
+    const definition = state.assignmentDefinitions[state.selectedAssignmentId];
+    if (!definition || state.selectedPageIndex >= definition.pages.length - 1) return;
+    state.selectedPageIndex += 1;
+    renderDetailView();
+});
+els.pageSelect.addEventListener('change', () => {
+    const definition = state.assignmentDefinitions[state.selectedAssignmentId];
+    if (!definition) return;
+    const nextIndex = parseInt(els.pageSelect.value, 10);
+    if (Number.isNaN(nextIndex)) return;
+    state.selectedPageIndex = nextIndex;
+    const students = getOrderedStudents();
+    const autoSelected = ensureSelectedStudent(students);
+    if (autoSelected) {
+        renderStudentList();
+    }
+    updateStepControls(definition);
+    renderDetailView();
+});
 
 // --- DATA FETCHING ---
 function initDashboard() {
@@ -148,19 +190,25 @@ function selectClass(classId) {
     state.selectedClassId = classId;
     state.selectedAssignmentId = null;
     state.selectedStudentId = null;
+    state.selectedPageIndex = 0;
     renderNav();
     renderStudentList();
     els.detailContent.innerHTML = '<div class="empty-state"><p>Wählen Sie eine Aufgabe aus.</p></div>';
     els.detailTitle.textContent = 'Ansicht';
+    updateStudentControls();
+    updateStepControls();
 }
 
 async function selectAssignment(assignmentId) {
     state.selectedAssignmentId = assignmentId;
     state.selectedStudentId = null;
+    state.selectedPageIndex = 0;
     renderNav();
     renderStudentList();
     els.detailContent.innerHTML = '<div class="empty-state"><p>Wählen Sie einen Schüler aus.</p></div>';
     els.detailTitle.textContent = `Aufgabe: ${assignmentId}`;
+    updateStudentControls();
+    updateStepControls();
 
     if (!state.assignmentDefinitions[assignmentId]) {
         try {
@@ -168,13 +216,16 @@ async function selectAssignment(assignmentId) {
             if (res.ok) state.assignmentDefinitions[assignmentId] = await res.json();
         } catch (e) { console.warn("JSON load failed", e); }
     }
+
+    updateStepControls(state.assignmentDefinitions[assignmentId]);
 }
 
 function renderStudentList() {
     els.studentListContent.innerHTML = '';
     if (!state.selectedClassId) return;
 
-    const students = state.users.filter(u => u.classId === state.selectedClassId);
+    const students = getOrderedStudents();
+    const autoSelected = ensureSelectedStudent(students);
     if (students.length === 0) {
         els.studentListContent.innerHTML = '<p class="placeholder-text">Keine Schüler in dieser Klasse.</p>';
         return;
@@ -232,11 +283,92 @@ function renderStudentList() {
         
         card.addEventListener('click', () => {
             state.selectedStudentId = student.id;
+            state.selectedPageIndex = 0;
             renderStudentList();
             renderDetailView();
         });
         els.studentListContent.appendChild(card);
     });
+
+    if (autoSelected) {
+        renderDetailView();
+    }
+}
+
+function getOrderedStudents() {
+    if (!state.selectedClassId) return [];
+    return state.users
+        .filter(u => u.classId === state.selectedClassId)
+        .slice()
+        .sort((a, b) => (a.displayName || '').localeCompare(b.displayName || ''));
+}
+
+function ensureSelectedStudent(students) {
+    if (!state.selectedAssignmentId || students.length === 0) return false;
+    if (!state.selectedStudentId || !students.some(s => s.id === state.selectedStudentId)) {
+        state.selectedStudentId = students[0].id;
+        return true;
+    }
+    return false;
+}
+
+function updateStudentControls() {
+    const students = getOrderedStudents();
+    if (!state.selectedStudentId || students.length === 0) {
+        els.studentControls.classList.add('hidden');
+        return;
+    }
+
+    const idx = students.findIndex(s => s.id === state.selectedStudentId);
+    if (idx === -1) {
+        els.studentControls.classList.add('hidden');
+        return;
+    }
+
+    els.studentIndicator.textContent = `Schüler ${idx + 1}/${students.length}: ${students[idx].displayName}`;
+    els.prevStudentBtn.disabled = idx === 0;
+    els.nextStudentBtn.disabled = idx === students.length - 1;
+    els.studentControls.classList.remove('hidden');
+}
+
+function navigateStudent(direction) {
+    const students = getOrderedStudents();
+    if (!state.selectedStudentId || students.length === 0) return;
+    const idx = students.findIndex(s => s.id === state.selectedStudentId);
+    if (idx === -1) return;
+
+    const nextIndex = idx + direction;
+    if (nextIndex < 0 || nextIndex >= students.length) return;
+
+    state.selectedStudentId = students[nextIndex].id;
+    renderStudentList();
+    renderDetailView();
+}
+
+function updateStepControls(definition) {
+    if (!state.selectedAssignmentId || !definition || !definition.pages || definition.pages.length === 0) {
+        els.stepControls.classList.add('hidden');
+        return;
+    }
+
+    if (state.selectedPageIndex < 0) state.selectedPageIndex = 0;
+    if (state.selectedPageIndex >= definition.pages.length) state.selectedPageIndex = definition.pages.length - 1;
+
+    const currentPage = definition.pages[state.selectedPageIndex];
+    if (!els.pageSelect.options.length || els.pageSelect.options.length !== definition.pages.length) {
+        els.pageSelect.innerHTML = '';
+        definition.pages.forEach((page, idx) => {
+            const option = document.createElement('option');
+            option.value = idx;
+            option.textContent = `Schritt ${idx + 1}: ${page.title}`;
+            els.pageSelect.appendChild(option);
+        });
+    }
+    els.pageSelect.value = String(state.selectedPageIndex);
+    els.pageIndicator.textContent = `Schritt ${state.selectedPageIndex + 1}/${definition.pages.length}: ${currentPage.title}`;
+    els.prevPageBtn.disabled = state.selectedPageIndex === 0;
+    els.nextPageBtn.disabled = state.selectedPageIndex === definition.pages.length - 1;
+    els.stepControls.classList.remove('hidden');
 }
 
 function renderDetailView() {
@@ -250,20 +382,25 @@ function renderDetailView() {
     els.detailContent.innerHTML = '';
 
     if (definition) {
-        definition.pages.forEach(page => {
-            const pageDiv = document.createElement('div');
-            pageDiv.className = 'assignment-page';
-            pageDiv.innerHTML = `<h2>${page.title}</h2>`;
-            const pageAnswers = submission[page.id] || {};
-            page.elements.forEach(el => {
-                if (el.type === 'quill') {
-                    const answer = pageAnswers[el.id] || '<span style="color:#ccc;">Keine Antwort</span>';
-                    pageDiv.innerHTML += `<div class="qa-pair"><div class="question">${el.question}</div><div class="answer">${answer}</div></div>`;
-                }
-            });
-            els.detailContent.appendChild(pageDiv);
+        updateStepControls(definition);
+        updateStudentControls();
+        const page = definition.pages[state.selectedPageIndex];
+        if (!page) return;
+
+        const pageDiv = document.createElement('div');
+        pageDiv.className = 'assignment-page';
+        pageDiv.innerHTML = `<h2>${page.title}</h2>`;
+        const pageAnswers = submission[page.id] || {};
+        page.elements.forEach(el => {
+            if (el.type === 'quill') {
+                const answer = pageAnswers[el.id] || '<span style="color:#ccc;">Keine Antwort</span>';
+                pageDiv.innerHTML += `<div class="qa-pair"><div class="question">${el.question}</div><div class="answer">${answer}</div></div>`;
+            }
         });
+        els.detailContent.appendChild(pageDiv);
     } else {
+        updateStepControls();
+        updateStudentControls();
         // Fallback for missing JSON
         Object.keys(submission).forEach(pageId => {
             const pageDiv = document.createElement('div');
@@ -277,3 +414,9 @@ function renderDetailView() {
         });
     }
 }
+
+
+
+
+
+

@@ -105,6 +105,37 @@ aside {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 12px;
+}
+.step-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+#student-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+#page-indicator {
+    min-width: 160px;
+    text-align: center;
+}
+#page-select {
+    max-width: 220px;
+    padding: 4px 6px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    background: #fff;
+    color: #495057;
+}
+#student-indicator {
+    min-width: 180px;
+    text-align: center;
 }
 #detail-content {
     flex: 1;
