@@ -23,11 +23,27 @@ function generatePrintHTML(assignmentData, assignmentSpecificAnswers) {
 
     assignmentData.pages.forEach(page => {
         bodyContent += `<div class="page-section"><h2>${page.title}</h2>`;
+
+        if (page.helpText) {
+            bodyContent += `
+                <div class="help-text">
+                    <div class="help-label">Hinweise</div>
+                    <div class="help-content">${page.helpText}</div>
+                </div>
+            `;
+        }
         
         // Get answers for this specific page
         const pageAnswers = assignmentSpecificAnswers[page.id] || {};
 
         page.elements.forEach(element => {
+            if (element.type === 'text') {
+                bodyContent += `
+                    <div class="text-block">
+                        ${element.content}
+                    </div>
+                `;
+            }
             if (element.type === 'quill') {
                 const answer = pageAnswers[element.id] || '<p><i>Keine Antwort abgegeben.</i></p>';
                 bodyContent += `
@@ -46,6 +62,11 @@ function generatePrintHTML(assignmentData, assignmentSpecificAnswers) {
         h1 { font-size: 2em; border-bottom: 2px solid #ccc; padding-bottom: 0.5em; margin-bottom: 1em; }
         h2 { font-size: 1.5em; background-color: #f0f0f0; padding: 0.5em; margin-top: 2em; border-left: 5px solid #007bff; }
         .page-section { page-break-inside: avoid; margin-bottom: 2em; }
+        .help-text { margin: 1em 0; padding: 0.75em 1em; background: #fff8e1; border-left: 4px solid #ffca28; }
+        .help-label { font-weight: bold; margin-bottom: 0.25em; }
+        .help-content p:first-child { margin-top: 0; }
+        .help-content p:last-child { margin-bottom: 0; }
+        .text-block { margin: 0.75em 0 1.25em; }
         .question-answer-pair { margin-bottom: 1.5em; padding-left: 1em; border-left: 3px solid #e9ecef; }
         .question-text { font-weight: bold; color: #333; }
         .answer-box { padding: 10px; border: 1px solid #ddd; border-radius: 4px; margin-top: 0.5em; background-color: #f9f9f9; }
