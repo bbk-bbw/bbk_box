@@ -102,11 +102,11 @@ html, body {
 }
 
 #stepper-sidebar {
-    width: 300px;
+    width: 220px;
     flex-shrink: 0;
     background-color: #f8f9fa;
     border-right: 1px solid #dee2e6;
-    padding: 1.5em;
+    padding: 1em;
     display: flex;
     flex-direction: column;
 }
