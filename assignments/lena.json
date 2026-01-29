@@ -1,0 +1,110 @@
+{
+    "assignmentId": "lena",
+    "assignmentTitle": "Interventionsgespräch mit Lena",
+    "pages": [
+        {
+            "id": "lena-einstieg",
+            "title": "1. Gesprächseinstieg",
+            "helpText": "<h4>Fallbeschreibung</h4><p>Lena ist eine Auszubildende im dritten Jahr ihrer Ausbildung. In den letzten Monaten sind Ihnen als Berufsbildnerin mehrere problematische Situationen aufgefallen. Lena kommt häufig in Konflikte mit ihren Kolleginnen und Kollegen, wirkt gestresst und überfordert. Zudem hat sie Probleme, ihre Arbeitszeiten einzuhalten, und ihre Arbeitsergebnisse haben nachgelassen. Sie haben auch beobachtet, dass Lena neu in der Mittagspause raucht. Sie möchten ein Interventionsgespräch mit Lena führen, um die verschiedenen Probleme anzusprechen und gemeinsam Lösungsansätze zu erarbeiten.</p><hr><h4>Wichtiger Hinweis zum Schritt</h4><p>Lena ist im 3. Jahr. Betonen Sie, dass das Gespräch dazu dient, ihren Lehrabschluss nicht zu gefährden.</p>",
+            "elements": [
+                {
+                    "type": "text",
+                    "content": "<h3>Den Einstieg gestalten</h3><p>Begrüssen Sie Lena und schaffen Sie eine Atmosphäre, die ein offenes Gespräch trotz des spürbaren Stresses ermöglicht.</p>"
+                },
+                {
+                    "type": "quill",
+                    "id": "lena_q1_begruessung",
+                    "question": "Wie begrüssen Sie Lena freundlich und schaffen eine ruhige Atmosphäre?"
+                },
+                {
+                    "type": "quill",
+                    "id": "lena_q1_grund",
+                    "question": "Mit welchen Worten erklären Sie den Grund für das Gespräch klar und direkt, aber ohne sofort anzuklagen?"
+                },
+                {
+                    "type": "quill",
+                    "id": "lena_q1_ziel",
+                    "question": "Wie formulieren Sie das Ziel des Gesprächs?"
+                }
+            ]
+        },
+        {
+            "id": "lena-verhalten",
+            "title": "2. Verhaltensweisen",
+            "helpText": "<h4>Fallbeschreibung</h4><p>Lena ist eine Auszubildende im dritten Jahr ihrer Ausbildung. In den letzten Monaten sind Ihnen als Berufsbildnerin mehrere problematische Situationen aufgefallen. Lena kommt häufig in Konflikte mit ihren Kolleginnen und Kollegen, wirkt gestresst und überfordert. Zudem hat sie Probleme, ihre Arbeitszeiten einzuhalten, und ihre Arbeitsergebnisse haben nachgelassen. Sie haben auch beobachtet, dass Lena neu in der Mittagspause raucht. Sie möchten ein Interventionsgespräch mit Lena führen, um die verschiedenen Probleme anzusprechen und gemeinsam Lösungsansätze zu erarbeiten.</p><hr><h4>Wichtiger Hinweis zum Schritt</h4><p>Sprechen Sie die Konflikte im Team direkt an, ohne Partei zu ergreifen.</p>",
+            "elements": [
+                {
+                    "type": "text",
+                    "content": "<h3>Beobachtbares Verhalten beschreiben</h3><p>Schildern Sie Ihre Beobachtungen sachlich. Berücksichtigen Sie ihre fortgeschrittene Ausbildung.</p>"
+                },
+                {
+                    "type": "quill",
+                    "id": "lena_q2_konkret",
+                    "question": "Welche konkreten, beobachtbaren Verhaltensweisen nennen Sie Lena?"
+                },
+                {
+                    "type": "quill",
+                    "id": "lena_q2_ich_botschaft",
+                    "question": "Wie nutzen Sie Ich-Botschaften, um Ihre Wahrnehmung zu schildern?"
+                },
+                {
+                    "type": "quill",
+                    "id": "lena_q2_sichtweise",
+                    "question": "Wie geben Sie Lena die Möglichkeit, ihre Sichtweise zu äussern?"
+                }
+            ]
+        },
+        {
+            "id": "lena-vertrauen",
+            "title": "3. Vertrauen aufbauen",
+            "helpText": "<h4>Fallbeschreibung</h4><p>Lena ist eine Auszubildende im dritten Jahr ihrer Ausbildung. In den letzten Monaten sind Ihnen als Berufsbildnerin mehrere problematische Situationen aufgefallen. Lena kommt häufig in Konflikte mit ihren Kolleginnen und Kollegen, wirkt gestresst und überfordert. Zudem hat sie Probleme, ihre Arbeitszeiten einzuhalten, und ihre Arbeitsergebnisse haben nachgelassen. Sie haben auch beobachtet, dass Lena neu in der Mittagspause raucht. Sie möchten ein Interventionsgespräch mit Lena führen, um die verschiedenen Probleme anzusprechen und gemeinsam Lösungsansätze zu erarbeiten.</p><hr><h4>Wichtiger Hinweis zum Schritt</h4><p>Thematisieren Sie den Stress – das Rauchen könnte ein Symptom für Überlastung sein.</p>",
+            "elements": [
+                {
+                    "type": "text",
+                    "content": "<h3>Verständnis signalisieren</h3><p>Bauen Sie Vertrauen auf, um die Ursachen für Lenas Verhaltensänderung zu verstehen.</p>"
+                },
+                {
+                    "type": "quill",
+                    "id": "lena_q3_perspektive",
+                    "question": "Mit welchen Worten signalisieren Sie, dass Sie versuchen, Lenas Perspektive zu verstehen?"
+                },
+                {
+                    "type": "quill",
+                    "id": "lena_q3_fragen",
+                    "question": "Welche offenen Fragen stellen Sie, um mehr über die Gründe ihres Stresses zu erfahren?"
+                },
+                {
+                    "type": "quill",
+                    "id": "lena_q3_unterstuetzung",
+                    "question": "Wie bekräftigen Sie Ihre Unterstützung für den erfolgreichen Lehrabschluss?"
+                }
+            ]
+        },
+        {
+            "id": "lena-auswirkungen",
+            "title": "4. Auswirkungen",
+            "helpText": "<h4>Fallbeschreibung</h4><p>Lena ist eine Auszubildende im dritten Jahr ihrer Ausbildung. In den letzten Monaten sind Ihnen als Berufsbildnerin mehrere problematische Situationen aufgefallen. Lena kommt häufig in Konflikte mit ihren Kolleginnen und Kollegen, wirkt gestresst und überfordert. Zudem hat sie Probleme, ihre Arbeitszeiten einzuhalten, und ihre Arbeitsergebnisse haben nachgelassen. Sie haben auch beobachtet, dass Lena neu in der Mittagspause raucht. Sie möchten ein Interventionsgespräch mit Lena führen, um die verschiedenen Probleme anzusprechen und gemeinsam Lösungsansätze zu erarbeiten.</p><hr><h4>Wichtiger Hinweis zum Schritt</h4><p>Machen Sie deutlich, dass Verhaltensänderungen im Teamklima kurz vor dem Abschluss besonders kritisch sind.</p>",
+            "elements": [
+                {
+                    "type": "text",
+                    "content": "<h3>Konsequenzen aufzeigen</h3><p>Geben Sie Lena eine klare Rückmeldung zu den Risiken ihrer aktuellen Situation.</p>"
+                },
+                {
+                    "type": "quill",
+                    "id": "lena_q4_folgen",
+                    "question": "Welche Folgen hat ihr Verhalten für das Teamklima und ihren Lehrabschluss?"
+                },
+                {
+                    "type": "quill",
+                    "id": "lena_q4_sachlich",
+                    "question": "Wie formulieren Sie diese Auswirkungen sachlich?"
+                },
+                {
+                    "type": "quill",
+                    "id": "lena_q4_zusammenhang",
+                    "question": "Wie stellen Sie den Zusammenhang zwischen Verhalten und Konsequenzen her?"
+                }
+            ]
+        }
+    ]
+}

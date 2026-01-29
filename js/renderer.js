@@ -3,7 +3,7 @@
 // --- Debounce Utility ---
 function debounce(func, wait) {
     let timeout;
-    return function(...args) {
+    return function (...args) {
         const context = this;
         clearTimeout(timeout);
         timeout = setTimeout(() => func.apply(context, args), wait);
@@ -16,7 +16,7 @@ const debouncedSave = debounce(async (userUid, assignmentId, pageId, elementId, 
     try {
         const db = firebase.firestore();
         const submissionRef = db.collection('submissions').doc(userUid);
-        
+
         // Create a nested object structure: { assignmentId: { pageId: { elementId: content } } }
         const payload = {
             [assignmentId]: {
@@ -25,7 +25,7 @@ const debouncedSave = debounce(async (userUid, assignmentId, pageId, elementId, 
                 }
             }
         };
-        
+
         await submissionRef.set(payload, { merge: true });
         console.log(`Saved [${assignmentId}]:`, payload);
     } catch (error) {
@@ -38,7 +38,7 @@ let presenceInterval = null;
 
 export function startPresenceTracking(userUid, assignmentId, pageId) {
     stopPresenceTracking(); // Clean up any existing interval
-    
+
     const db = firebase.firestore();
     const updatePresence = async () => {
         try {
@@ -52,10 +52,10 @@ export function startPresenceTracking(userUid, assignmentId, pageId) {
             console.error("Presence update failed:", error);
         }
     };
-    
+
     // Update immediately
     updatePresence();
-    
+
     // Then every 5 seconds
     presenceInterval = setInterval(updatePresence, 5000);
 }
@@ -80,18 +80,19 @@ export function renderPage(pageObject, container) {
     container.innerHTML = '';
 
     if (pageObject.helpText) {
-            const details = document.createElement('details');
-            // Add a class for styling
-            details.className = 'info-callout'; 
-            // Add Emoji and wrap the content in a div for better padding control
-            details.innerHTML = `
-                <summary>💡 Weitere Informationen / Hinweise</summary>
+        const details = document.createElement('details');
+        // Add a class for styling
+        details.className = 'info-callout';
+        details.open = true; // NEW: Always open by default
+        // Add Emoji and wrap the content in a div for better padding control
+        details.innerHTML = `
+                <summary>💡 Fallbeispiel & Hinweise</summary>
                 <div class="info-content">
                     ${pageObject.helpText}
                 </div>
             `;
-            container.appendChild(details);
-        }
+        container.appendChild(details);
+    }
 
     pageObject.elements.forEach(element => {
         if (element.type === 'text') {
@@ -110,7 +111,7 @@ export async function loadAndRenderAnswers(userUid, assignmentId, pageObject) {
     const db = firebase.firestore();
     const submissionRef = db.collection('submissions').doc(userUid);
     const doc = await submissionRef.get();
-    
+
     // Access data safely: doc -> assignmentId -> pageId -> elementId
     const allData = doc.exists ? doc.data() : {};
     const assignmentData = allData[assignmentId] || {};
@@ -169,7 +170,7 @@ function renderQuillEditorStructure(element, container) {
     new Quill(editorDiv, {
         theme: 'snow',
         modules: {
-            toolbar: [['bold', 'italic', 'underline'], [{ 'list': 'ordered'}, { 'list': 'bullet' }], ['clean']]
+            toolbar: [['bold', 'italic', 'underline'], [{ 'list': 'ordered' }, { 'list': 'bullet' }], ['clean']]
         }
     });
 }

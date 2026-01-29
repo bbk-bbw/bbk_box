@@ -1,0 +1,110 @@
+{
+    "assignmentId": "max",
+    "assignmentTitle": "Interventionsgespräch mit Max",
+    "pages": [
+        {
+            "id": "max-einstieg",
+            "title": "1. Gesprächseinstieg",
+            "helpText": "<h4>Fallbeschreibung</h4><p>Max ist ein Auszubildender im zweiten Jahr seiner Ausbildung. In den letzten Wochen haben Sie als sein Berufsbildner bemerkt, dass Max häufig zu spät zur Arbeit kommt und seine Aufgaben nicht mehr so gewissenhaft erledigt wie früher. Ausserdem wirkt er oft unmotiviert und zieht sich während der Pausen zurück. Sie befürchten, dass diese Veränderungen in Max’ Verhalten seine Leistungen negativ beeinflussen könnten und möchten ein Interventionsgespräch mit ihm führen, um herauszufinden, ob es Gründe für diese Verhaltensänderung gibt und wie Sie ihm helfen können, seine Situation zu verbessern.</p><hr><h4>Wichtiger Hinweis zum Schritt</h4><p>Schaffen Sie eine Atmosphäre, in der Max über seine Motivationslosigkeit sprechen kann.</p>",
+            "elements": [
+                {
+                    "type": "text",
+                    "content": "<h3>Den Einstieg gestalten</h3><p>Bereiten Sie den Boden für ein Gespräch über Motivation und Zuverlässigkeit.</p>"
+                },
+                {
+                    "type": "quill",
+                    "id": "max_q1_begruessung",
+                    "question": "Wie begrüssen Sie Max freundlich und schaffen eine ruhige Atmosphäre?"
+                },
+                {
+                    "type": "quill",
+                    "id": "max_q1_grund",
+                    "question": "Mit welchen Worten erklären Sie den Grund für das Gespräch klar?"
+                },
+                {
+                    "type": "quill",
+                    "id": "max_q1_ziel",
+                    "question": "Wie formulieren Sie das Ziel des Gesprächs?"
+                }
+            ]
+        },
+        {
+            "id": "max-verhalten",
+            "title": "2. Verhaltensweisen",
+            "helpText": "<h4>Fallbeschreibung</h4><p>Max ist ein Auszubildender im zweiten Jahr seiner Ausbildung. In den letzten Wochen haben Sie als sein Berufsbildner bemerkt, dass Max häufig zu spät zur Arbeit kommt und seine Aufgaben nicht mehr so gewissenhaft erledigt wie früher. Ausserdem wirkt er oft unmotiviert und zieht sich während der Pausen zurück. Sie befürchten, dass diese Veränderungen in Max’ Verhalten seine Leistungen negativ beeinflussen könnten und möchten ein Interventionsgespräch mit ihm führen, um herauszufinden, ob es Gründe für diese Verhaltensänderung gibt und wie Sie ihm helfen können, seine Situation zu verbessern.</p><hr><h4>Wichtiger Hinweis zum Schritt</h4><p>Beschreiben Sie die Unpünktlichkeit und die nachlassende Sorgfalt als Abweichung von seinem früheren, guten Standard.</p>",
+            "elements": [
+                {
+                    "type": "text",
+                    "content": "<h3>Beobachtbares Verhalten beschreiben</h3><p>Schildern Sie die Veränderungen, die Sie an Max' Verhalten festgestellt haben.</p>"
+                },
+                {
+                    "type": "quill",
+                    "id": "max_q2_konkret",
+                    "question": "Welche konkreten Verhaltensweisen nennen Sie?"
+                },
+                {
+                    "type": "quill",
+                    "id": "max_q2_ich_botschaft",
+                    "question": "Wie nutzen Sie Ich-Botschaften?"
+                },
+                {
+                    "type": "quill",
+                    "id": "max_q2_sichtweise",
+                    "question": "Wie geben Sie Max Raum für seine Sichtweise?"
+                }
+            ]
+        },
+        {
+            "id": "max-vertrauen",
+            "title": "3. Vertrauen aufbauen",
+            "helpText": "<h4>Fallbeschreibung</h4><p>Max ist ein Auszubildender im zweiten Jahr seiner Ausbildung. In den letzten Wochen haben Sie als sein Berufsbildner bemerkt, dass Max häufig zu spät zur Arbeit kommt und seine Aufgaben nicht mehr so gewissenhaft erledigt wie früher. Ausserdem wirkt er oft unmotiviert und zieht sich während der Pausen zurück. Sie befürchten, dass diese Veränderungen in Max’ Verhalten seine Leistungen negativ beeinflussen könnten und möchten ein Interventionsgespräch mit ihm führen, um herauszufinden, ob es Gründe für diese Verhaltensänderung gibt und wie Sie ihm helfen können, seine Situation zu verbessern.</p><hr><h4>Wichtiger Hinweis zum Schritt</h4><p>Fragen Sie offen nach privaten Gründen oder Frust im Betrieb, da der Rückzug im 2. Jahr typisch sein kann.</p>",
+            "elements": [
+                {
+                    "type": "text",
+                    "content": "<h3>Verständnis signalisieren</h3><p>Versuchen Sie, die Gründe für Max' Rückzug und Motivationsverlust zu verstehen.</p>"
+                },
+                {
+                    "type": "quill",
+                    "id": "max_q3_perspektive",
+                    "question": "Mit welchen Worten signalisieren Sie Verständnis für seine Situation?"
+                },
+                {
+                    "type": "quill",
+                    "id": "max_q3_fragen",
+                    "question": "Welche offenen Fragen stellen Sie, um mehr über die Verhaltensänderung erfahren?"
+                },
+                {
+                    "type": "quill",
+                    "id": "max_q3_unterstuetzung",
+                    "question": "Wie bekräftigen Sie Ihre Unterstützung?"
+                }
+            ]
+        },
+        {
+            "id": "max-auswirkungen",
+            "title": "4. Auswirkungen",
+            "helpText": "<h4>Fallbeschreibung</h4><p>Max ist ein Auszubildender im zweiten Jahr seiner Ausbildung. In den letzten Wochen haben Sie als sein Berufsbildner bemerkt, dass Max häufig zu spät zur Arbeit kommt und seine Aufgaben nicht mehr so gewissenhaft erledigt wie früher. Ausserdem wirkt er oft unmotiviert und zieht sich während der Pausen zurück. Sie befürchten, dass diese Veränderungen in Max’ Verhalten seine Leistungen negativ beeinflussen könnten und möchten ein Interventionsgespräch mit ihm führen, um herauszufinden, ob es Gründe für diese Verhaltensänderung gibt und wie Sie ihm helfen können, seine Situation zu verbessern.</p><hr><h4>Wichtiger Hinweis zum Schritt</h4><p>Zeigen Sie ihm, dass Unzuverlässigkeit seine guten Leistungen aus dem 1. Jahr überschattet.</p>",
+            "elements": [
+                {
+                    "type": "text",
+                    "content": "<h3>Konsequenzen aufzeigen</h3><p>Verdeutlichen Sie Max die Auswirkungen seines aktuellen Verhaltens.</p>"
+                },
+                {
+                    "type": "quill",
+                    "id": "max_q4_folgen",
+                    "question": "Welche Folgen hat sein Verhalten für die Arbeitsqualität und das Team?"
+                },
+                {
+                    "type": "quill",
+                    "id": "max_q4_sachlich",
+                    "question": "Wie formulieren Sie diese Auswirkungen sachlich?"
+                },
+                {
+                    "type": "quill",
+                    "id": "max_q4_zusammenhang",
+                    "question": "Wie stellen Sie den Zusammenhang her?"
+                }
+            ]
+        }
+    ]
+}

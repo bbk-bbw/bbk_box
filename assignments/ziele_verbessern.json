@@ -1,0 +1,102 @@
+{
+    "assignmentId": "ziele_verbessern",
+    "assignmentTitle": "Ziele präziser formulieren",
+    "pages": [
+        {
+            "id": "ziel1-noten",
+            "title": "1. Schulnoten",
+            "helpText": "<h4>Methoden zur Verbesserung</h4><p>Das Ziel dieser Übung ist es, schlecht formulierte Ziele zu verbessern, indem sie präziser, messbarer und realistischer gemacht werden.</p><p><b>Schritte zur Bearbeitung:</b></p><ul><li>Wählt für jedes Ziel eine der drei Methoden zur Verbesserung aus.</li><li>Jede Methode sollte mindestens einmal angewendet werden.</li><li>Überarbeitet jedes Ziel unter Anwendung der ausgewählten Methode.</li><li>Achtet darauf, dass jedes verbesserte Ziel den Kriterien der jeweiligen Methode entspricht.</li></ul><hr><h4>Tipp</h4><p>Wann genau ist 'bis zum nächsten Semester'? Definieren Sie ein konkretes Datum oder einen Notendurchschnitt.</p>",
+            "elements": [
+                {
+                    "type": "text",
+                    "content": "<h3>Ziel 1: Schulnoten</h3><p>Schlechte Formulierung: <i>'Die Schulnoten sollten bis zum nächsten Semester besser werden.'</i></p>"
+                },
+                {
+                    "type": "quill",
+                    "id": "z1_verbesserung",
+                    "question": "Verbessertes Ziel:"
+                }
+            ]
+        },
+        {
+            "id": "ziel2-engagement",
+            "title": "2. Engagement",
+            "helpText": "<h4>Methoden zur Verbesserung</h4><p>Das Ziel dieser Übung ist es, schlecht formulierte Ziele zu verbessern, indem sie präziser, messbarer und realistischer gemacht werden.</p><hr><h4>Tipp</h4><p>Wie zeigt man 'Engagement'? Nennen Sie eine konkrete Handlung, z. B. 'Fragt bei Unklarheiten sofort nach'.</p>",
+            "elements": [
+                {
+                    "type": "text",
+                    "content": "<h3>Ziel 2: Engagement</h3><p>Schlechte Formulierung: <i>'Mehr Engagement im Betrieb zeigen'</i></p>"
+                },
+                {
+                    "type": "quill",
+                    "id": "z2_verbesserung",
+                    "question": "Verbessertes Ziel:"
+                }
+            ]
+        },
+        {
+            "id": "ziel3-puenktlichkeit",
+            "title": "3. Pünktlichkeit",
+            "helpText": "<h4>Methoden zur Verbesserung</h4><p>Das Ziel dieser Übung ist es, schlecht formulierte Ziele zu verbessern, indem sie präziser, messbarer und realistischer gemacht werden.</p><hr><h4>Tipp</h4><p>'Verbessern' ist vage. Formulieren Sie es messbar, z. B. 'Maximal 2 Minuten Verspätung pro Monat'.</p>",
+            "elements": [
+                {
+                    "type": "text",
+                    "content": "<h3>Ziel 3: Pünktlichkeit</h3><p>Schlechte Formulierung: <i>'Pünktlichkeit bei der Arbeit verbessern.'</i></p>"
+                },
+                {
+                    "type": "quill",
+                    "id": "z3_verbesserung",
+                    "question": "Verbessertes Ziel:"
+                }
+            ]
+        },
+        {
+            "id": "ziel4-fachkenntnisse",
+            "title": "4. Fachkenntnisse",
+            "helpText": "<h4>Methoden zur Verbesserung</h4><p>Das Ziel dieser Übung ist es, schlecht formulierte Ziele zu verbessern, indem sie präziser, messbarer und realistischer gemacht werden.</p><hr><h4>Tipp</h4><p>Welche Fachkenntnisse genau? CAD? Buchhaltung? Definieren Sie ein Teilgebiet.</p>",
+            "elements": [
+                {
+                    "type": "text",
+                    "content": "<h3>Ziel 4: Fachkenntnisse</h3><p>Schlechte Formulierung: <i>'Die Fachkenntnisse verbessern.'</i></p>"
+                },
+                {
+                    "type": "quill",
+                    "id": "z4_verbesserung",
+                    "question": "Verbessertes Ziel:"
+                }
+            ]
+        },
+        {
+            "id": "ziel5-organisation",
+            "title": "5. Organisation",
+            "helpText": "<h4>Methoden zur Verbesserung</h4><p>Das Ziel dieser Übung ist es, schlecht formulierte Ziele zu verbessern, indem sie präziser, messbarer und realistischer gemacht werden.</p><hr><h4>Tipp</h4><p>Was bedeutet 'Organisation'? Ordnung auf dem Schreibtisch? Ablage im PC? Seien Sie spezifisch.</p>",
+            "elements": [
+                {
+                    "type": "text",
+                    "content": "<h3>Ziel 5: Organisation</h3><p>Schlechte Formulierung: <i>'Die Organisation der Arbeitsmaterialien verbessern.'</i></p>"
+                },
+                {
+                    "type": "quill",
+                    "id": "z5_verbesserung",
+                    "question": "Verbessertes Ziel:"
+                }
+            ]
+        },
+        {
+            "id": "ziel6-qualitaet",
+            "title": "6. Arbeitsqualität",
+            "helpText": "<h4>Methoden zur Verbesserung</h4><p>Das Ziel dieser Übung ist es, schlecht formulierte Ziele zu verbessern, indem sie präziser, messbarer und realistischer gemacht werden.</p><hr><h4>Tipp</h4><p>Nutzen Sie Erfolgskriterien wie 'Fehlerquote unter 5%'.</p>",
+            "elements": [
+                {
+                    "type": "text",
+                    "content": "<h3>Ziel 6: Arbeitsqualität</h3><p>Schlechte Formulierung: <i>'Die Arbeitsqualität steigern'</i></p>"
+                },
+                {
+                    "type": "quill",
+                    "id": "z6_verbesserung",
+                    "question": "Verbessertes Ziel:"
+                }
+            ]
+        }
+    ]
+}

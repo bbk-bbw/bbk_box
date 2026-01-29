@@ -1,0 +1,110 @@
+{
+    "assignmentId": "anna",
+    "assignmentTitle": "Interventionsgespräch mit Anna",
+    "pages": [
+        {
+            "id": "anna-einstieg",
+            "title": "1. Gesprächseinstieg",
+            "helpText": "<h4>Fallbeschreibung</h4><p>Anna ist eine Auszubildende im ersten Jahr ihrer Ausbildung. Seit ein paar Wochen fällt Ihnen als Berufsbildnerin auf, dass Anna Schwierigkeiten hat, sich auf ihre Aufgaben zu konzentrieren und häufig Fehler macht. Sie hat auch zunehmend Schwierigkeiten, mit ihren Kolleginnen und Kollegen zu kommunizieren und vermeidet den Kontakt zu anderen. Sie möchten ein Interventionsgespräch mit Anna führen, um herauszufinden, ob es persönliche oder berufliche Probleme gibt, die ihr Verhalten beeinflussen, und wie Sie sie dabei unterstützen können, ihre Probleme zu bewältigen und ihre Leistungen zu verbessern.</p><hr><h4>Wichtiger Hinweis zum Schritt</h4><p>Behandeln Sie Anna als Berufseinsteigerin besonders behutsam, um keine Ängste zu schüren.</p>",
+            "elements": [
+                {
+                    "type": "text",
+                    "content": "<h3>Den Einstieg gestalten</h3><p>Schaffen Sie eine Atmosphäre der Sicherheit, da Anna sich offenbar zurückzieht.</p>"
+                },
+                {
+                    "type": "quill",
+                    "id": "anna_q1_begruessung",
+                    "question": "Wie begrüssen Sie Anna freundlich und schaffen eine ruhige Atmosphäre?"
+                },
+                {
+                    "type": "quill",
+                    "id": "anna_q1_grund",
+                    "question": "Mit welchen Worten erklären Sie den Grund für das Gespräch ohne Vorbehalte?"
+                },
+                {
+                    "type": "quill",
+                    "id": "anna_q1_ziel",
+                    "question": "Wie formulieren Sie das Ziel des Gesprächs?"
+                }
+            ]
+        },
+        {
+            "id": "anna-verhalten",
+            "title": "2. Verhaltensweisen",
+            "helpText": "<h4>Fallbeschreibung</h4><p>Anna ist eine Auszubildende im ersten Jahr ihrer Ausbildung. Seit ein paar Wochen fällt Ihnen als Berufsbildnerin auf, dass Anna Schwierigkeiten hat, sich auf ihre Aufgaben zu konzentrieren und häufig Fehler macht. Sie hat auch zunehmend Schwierigkeiten, mit ihren Kolleginnen und Kollegen zu kommunizieren und vermeidet den Kontakt zu anderen. Sie möchten ein Interventionsgespräch mit Anna führen, um herauszufinden, ob es persönliche oder berufliche Probleme gibt, die ihr Verhalten beeinflussen, und wie Sie sie dabei unterstützen können, ihre Probleme zu bewältigen und ihre Leistungen zu verbessern.</p><hr><h4>Wichtiger Hinweis zum Schritt</h4><p>Nennen Sie Beispiele für die Konzentrationsfehler, ohne sie als Unfähigkeit darzustellen.</p>",
+            "elements": [
+                {
+                    "type": "text",
+                    "content": "<h3>Beobachtbares Verhalten beschreiben</h3><p>Schildern Sie Anna sachlich, was Ihnen in Bezug auf ihre Arbeit und ihr Sozialverhalten aufgefallen ist.</p>"
+                },
+                {
+                    "type": "quill",
+                    "id": "anna_q2_konkret",
+                    "question": "Welche konkreten Verhaltensweisen nennen Sie?"
+                },
+                {
+                    "type": "quill",
+                    "id": "anna_q2_ich_botschaft",
+                    "question": "Wie nutzen Sie Ich-Botschaften?"
+                },
+                {
+                    "type": "quill",
+                    "id": "anna_q2_sichtweise",
+                    "question": "Wie geben Sie Anna die Möglichkeit, sich zu äussern?"
+                }
+            ]
+        },
+        {
+            "id": "anna-vertrauen",
+            "title": "3. Vertrauen aufbauen",
+            "helpText": "<h4>Fallbeschreibung</h4><p>Anna ist eine Auszubildende im ersten Jahr ihrer Ausbildung. Seit ein paar Wochen fällt Ihnen als Berufsbildnerin auf, dass Anna Schwierigkeiten hat, sich auf ihre Aufgaben zu konzentrieren und häufig Fehler macht. Sie hat auch zunehmend Schwierigkeiten, mit ihren Kolleginnen und Kollegen zu kommunizieren und vermeidet den Kontakt zu anderen. Sie möchten ein Interventionsgespräch mit Anna führen, um herauszufinden, ob es persönliche oder berufliche Probleme gibt, die ihr Verhalten beeinflussen, und wie Sie sie dabei unterstützen können, ihre Probleme zu bewältigen und ihre Leistungen zu verbessern.</p><hr><h4>Wichtiger Hinweis zum Schritt</h4><p>Untersuchen Sie, ob Anna sich im Team ausgegrenzt fühlt oder ob die Anforderungen zu hoch sind.</p>",
+            "elements": [
+                {
+                    "type": "text",
+                    "content": "<h3>Verständnis signalisieren</h3><p>Bauen Sie Vertrauen auf, um gemeinsam herauszufinden, wie Anna unterstützt werden kann.</p>"
+                },
+                {
+                    "type": "quill",
+                    "id": "anna_q3_perspektive",
+                    "question": "Mit welchen Worten signalisieren Sie Anna, dass Sie ihre Perspektive verstehen wollen?"
+                },
+                {
+                    "type": "quill",
+                    "id": "anna_q3_fragen",
+                    "question": "Welche offenen Fragen stellen Sie, um die Hintergründe der Fehler und des Rückzugs zu erfahren?"
+                },
+                {
+                    "type": "quill",
+                    "id": "anna_q3_unterstuetzung",
+                    "question": "Wie bekräftigen Sie Ihre volle Unterstützung?"
+                }
+            ]
+        },
+        {
+            "id": "anna-auswirkungen",
+            "title": "4. Auswirkungen",
+            "helpText": "<h4>Fallbeschreibung</h4><p>Anna ist eine Auszubildende im ersten Jahr ihrer Ausbildung. Seit ein paar Wochen fällt Ihnen als Berufsbildnerin auf, dass Anna Schwierigkeiten hat, sich auf ihre Aufgaben zu konzentrieren und häufig Fehler macht. Sie hat auch zunehmend Schwierigkeiten, mit ihren Kolleginnen und Kollegen zu kommunizieren und vermeidet den Kontakt zu anderen. Sie möchten ein Interventionsgespräch mit Anna führen, um herauszufinden, ob es persönliche oder berufliche Probleme gibt, die ihr Verhalten beeinflussen, und wie Sie sie dabei unterstützen können, ihre Probleme zu bewältigen und ihre Leistungen zu verbessern.</p><hr><h4>Wichtiger Hinweis zum Schritt</h4><p>Betonen Sie, dass frühe Korrekturen im 1. Jahr wichtig sind, um eine solide Basis für die weitere Ausbildung zu legen.</p>",
+            "elements": [
+                {
+                    "type": "text",
+                    "content": "<h3>Konsequenzen aufzeigen</h3><p>Erläutern Sie Anna, warum die Behebung der Konzentrationsmängel für sie wichtig ist.</p>"
+                },
+                {
+                    "type": "quill",
+                    "id": "anna_q4_folgen",
+                    "question": "Welche Folgen hat das Verhalten für Annas Ausbildung und das Team?"
+                },
+                {
+                    "type": "quill",
+                    "id": "anna_q4_sachlich",
+                    "question": "Wie formulieren Sie diese Auswirkungen sachlich?"
+                },
+                {
+                    "type": "quill",
+                    "id": "anna_q4_zusammenhang",
+                    "question": "Wie stellen Sie den Zusammenhang her?"
+                }
+            ]
+        }
+    ]
+}

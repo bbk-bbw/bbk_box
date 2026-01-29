@@ -1,0 +1,110 @@
+{
+    "assignmentId": "tom",
+    "assignmentTitle": "Interventionsgespräch mit Tom",
+    "pages": [
+        {
+            "id": "tom-einstieg",
+            "title": "1. Gesprächseinstieg",
+            "helpText": "<h4>Fallbeschreibung</h4><p>Tom ist ein Auszubildender im ersten Jahr seiner Ausbildung. Ihnen als Berufsbildner ist aufgefallen, dass Tom in letzter Zeit mehrere problematische Situationen verursacht hat. Er hat häufig Schwierigkeiten, seine Aufgaben fristgerecht zu erledigen, und benötigt mehr Unterstützung als zuvor. Zudem hat er kürzlich einen wichtigen Kundenauftrag verloren, weil er unangemessen mit dem Kunden kommuniziert hat. Ihnen ist auch aufgefallen, dass Tom seine Pausen immer wieder verlängert und manchmal verschwindet, ohne seinen Kollegen Bescheid zu geben. Sie möchten ein Interventionsgespräch mit Tom führen, um die verschiedenen Probleme zu besprechen und herauszufinden, wie Sie ihm helfen können, seine Situation zu verbessern und erfolgreicher in seiner Ausbildung zu sein.</p><hr><h4>Wichtiger Hinweis zum Schritt</h4><p>Achten Sie darauf, den Kundenverlust nicht als Vorwurf zu formulieren, sondern als sachlichen Grund für das Gespräch.</p>",
+            "elements": [
+                {
+                    "type": "text",
+                    "content": "<h3>Den Einstieg gestalten</h3><p>Schaffen Sie eine professionelle, aber wertschätzende Atmosphäre, um das Interventionsgespräch zu beginnen.</p>"
+                },
+                {
+                    "type": "quill",
+                    "id": "tom_q1_begruessung",
+                    "question": "Wie begrüssen Sie Tom freundlich und schaffen eine ruhige Atmosphäre?"
+                },
+                {
+                    "type": "quill",
+                    "id": "tom_q1_grund",
+                    "question": "Mit welchen Worten erklären Sie den Grund für das Gespräch klar und direkt, aber ohne sofort anzuklagen?"
+                },
+                {
+                    "type": "quill",
+                    "id": "tom_q1_ziel",
+                    "question": "Wie formulieren Sie das Ziel des Gesprächs?"
+                }
+            ]
+        },
+        {
+            "id": "tom-verhalten",
+            "title": "2. Verhaltensweisen",
+            "helpText": "<h4>Fallbeschreibung</h4><p>Tom ist ein Auszubildender im ersten Jahr seiner Ausbildung. Ihnen als Berufsbildner ist aufgefallen, dass Tom in letzter Zeit mehrere problematische Situationen verursacht hat. Er hat häufig Schwierigkeiten, seine Aufgaben fristgerecht zu erledigen, und benötigt mehr Unterstützung als zuvor. Zudem hat er kürzlich einen wichtigen Kundenauftrag verloren, weil er unangemessen mit dem Kunden kommuniziert hat. Ihnen ist auch aufgefallen, dass Tom seine Pausen immer wieder verlängert und manchmal verschwindet, ohne seinen Kollegen Bescheid zu geben. Sie möchten ein Interventionsgespräch mit Tom führen, um die verschiedenen Probleme zu besprechen und herauszufinden, wie Sie ihm helfen können, seine Situation zu verbessern und erfolgreicher in seiner Ausbildung zu sein.</p><hr><h4>Wichtiger Hinweis zum Schritt</h4><p>Nennen Sie spezifische Beispiele für die verlängerten Pausen und die versäumten Fristen.</p>",
+            "elements": [
+                {
+                    "type": "text",
+                    "content": "<h3>Beobachtbares Verhalten beschreiben</h3><p>Nutzen Sie Ich-Botschaften, um Ihre Wahrnehmung sachlich zu schildern. Vermeiden Sie Verallgemeinerungen wie 'immer' oder 'nie'.</p>"
+                },
+                {
+                    "type": "quill",
+                    "id": "tom_q2_konkret",
+                    "question": "Welche konkreten, beobachtbaren Verhaltensweisen aus dem Fallbeispiel nennen Sie? (Seien Sie spezifisch.)"
+                },
+                {
+                    "type": "quill",
+                    "id": "tom_q2_ich_botschaft",
+                    "question": "Wie nutzen Sie Ich-Botschaften, um Ihre Wahrnehmung zu schildern?"
+                },
+                {
+                    "type": "quill",
+                    "id": "tom_q2_sichtweise",
+                    "question": "Wie geben Tom anschliessend die Möglichkeit, seine Sichtweise zu äussern?"
+                }
+            ]
+        },
+        {
+            "id": "tom-vertrauen",
+            "title": "3. Vertrauen aufbauen",
+            "helpText": "<h4>Fallbeschreibung</h4><p>Tom ist ein Auszubildender im ersten Jahr seiner Ausbildung. Ihnen als Berufsbildner ist aufgefallen, dass Tom in letzter Zeit mehrere problematische Situationen verursacht hat. Er hat häufig Schwierigkeiten, seine Aufgaben fristgerecht zu erledigen, und benötigt mehr Unterstützung als zuvor. Zudem hat er kürzlich einen wichtigen Kundenauftrag verloren, weil er unangemessen mit dem Kunden kommuniziert hat. Ihnen ist auch aufgefallen, dass Tom seine Pausen immer wieder verlängert und manchmal verschwindet, ohne seinen Kollegen Bescheid zu geben. Sie möchten ein Interventionsgespräch mit Tom führen, um die verschiedenen Probleme zu besprechen und herauszufinden, wie Sie ihm helfen können, seine Situation zu verbessern und erfolgreicher in seiner Ausbildung zu sein.</p><hr><h4>Wichtiger Hinweis zum Schritt</h4><p>Fragen Sie nach dem Grund für das plötzliche Verschwinden – steckt vielleicht Überforderung hinter der Unzuverlässigkeit?</p>",
+            "elements": [
+                {
+                    "type": "text",
+                    "content": "<h3>Verständnis signalisieren</h3><p>Bauen Sie Vertrauen auf, um herauszufinden, warum sich Toms Verhalten geändert hat.</p>"
+                },
+                {
+                    "type": "quill",
+                    "id": "tom_q3_perspektive",
+                    "question": "Mit welchen Worten signalisieren Sie, dass Sie versuchen, Toms Perspektive zu verstehen?"
+                },
+                {
+                    "type": "quill",
+                    "id": "tom_q3_fragen",
+                    "question": "Welche offenen Fragen stellen Sie, um mehr über die Hintergründe (z.B. Überforderung?) zu erfahren?"
+                },
+                {
+                    "type": "quill",
+                    "id": "tom_q3_unterstuetzung",
+                    "question": "Wie bekräftigen Sie Ihre Unterstützung, ohne das Problemverhalten zu bagatellisieren?"
+                }
+            ]
+        },
+        {
+            "id": "tom-auswirkungen",
+            "title": "4. Auswirkungen",
+            "helpText": "<h4>Fallbeschreibung</h4><p>Tom ist ein Auszubildender im ersten Jahr seiner Ausbildung. Ihnen als Berufsbildner ist aufgefallen, dass Tom in letzter Zeit mehrere problematische Situationen verursacht hat. Er hat häufig Schwierigkeiten, seine Aufgaben fristgerecht zu erledigen, und benötigt mehr Unterstützung als zuvor. Zudem hat er kürzlich einen wichtigen Kundenauftrag verloren, weil er unangemessen mit dem Kunden kommuniziert hat. Ihnen ist auch aufgefallen, dass Tom seine Pausen immer wieder verlängert und manchmal verschwindet, ohne seinen Kollegen Bescheid zu geben. Sie möchten ein Interventionsgespräch mit Tom führen, um die verschiedenen Probleme zu besprechen und herauszufinden, wie Sie ihm helfen können, seine Situation zu verbessern und erfolgreicher in seiner Ausbildung zu sein.</p><hr><h4>Wichtiger Hinweis zum Schritt</h4><p>Zeigen Sie auf, wie das Team die Mehrarbeit durch das Verschwinden auffangen muss.</p>",
+            "elements": [
+                {
+                    "type": "text",
+                    "content": "<h3>Konsequenzen aufzeigen</h3><p>Machen Sie deutlich, warum eine Änderung zwingend erforderlich ist.</p>"
+                },
+                {
+                    "type": "quill",
+                    "id": "tom_q4_folgen",
+                    "question": "Welche spezifischen Folgen hat Toms Verhalten für die Ausbildung, das Team oder den Kunden?"
+                },
+                {
+                    "type": "quill",
+                    "id": "tom_q4_sachlich",
+                    "question": "Wie formulieren Sie diese Auswirkungen sachlich und nachvollziehbar?"
+                },
+                {
+                    "type": "quill",
+                    "id": "tom_q4_zusammenhang",
+                    "question": "Wie stellen Sie den klaren Zusammenhang zwischen seinem Verhalten und den Konsequenzen her?"
+                }
+            ]
+        }
+    ]
+}

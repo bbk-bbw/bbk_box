@@ -1,99 +1,30 @@
-/* Base & Layout Styles */
+/* LMS Box - Academic Vibe Styles v3.1 */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800&display=swap');
+
+:root {
+    --primary: #007bff;
+    --primary-dark: #0056b3;
+    --bg-main: #f0f2f5;
+    --bg-paper: #ffffff;
+    --text-main: #1a1a1a;
+    --text-muted: #586069;
+    --border-color: #e1e4e8;
+    --shadow-main: 0 1px 3px rgba(0, 0, 0, 0.12), 0 10px 20px rgba(0, 0, 0, 0.05);
+    --paper-padding: 3rem 4rem;
+}
+
+/* Global Reset & Layout */
+html,
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f8f9fa;
-    color: #212529;
-}
-
-#assignment-container {
-    max-width: 900px;
-    margin: 2em auto;
-    padding: 2em;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.07);
-}
-
-/* Hide main title for compact layout */
-#main-title {
-    display: none;
-}
-
-/* Style subtitle with small margin at top */
-#sub-title {
-    margin-top: 0.5em;
-    margin-bottom: 1em;
-    font-size: 1.2em;
-    font-weight: 600;
-    color: #495057;
-}
-
-#assignment-header h2 {
-    margin-top: 0;
-}
-
-/* Action Buttons */
-#action-container button {
-    padding: 10px 20px;
-    font-size: 1em;
-    border: 1px solid #007bff;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.2s, border-color 0.2s;
-    margin-right: 10px;
-}
-
-#action-container button:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-}
-
-#action-container button:disabled {
-    background-color: #ced4da;
-    border-color: #ced4da;
-    cursor: not-allowed;
-}
-
-/* Solution Display */
-#solution-display-container {
-    display: none; /* Hidden by default */
-    margin-top: 30px;
-    padding: 20px;
-    background-color: #f0fff4; /* Light green background */
-    border: 1px solid #28a745;
-    border-radius: 8px;
-}
-
-#solution-display-container h3 {
-    margin-top: 0;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #dee2e6;
-    color: #155724; /* Dark green text */
-}
-
-/* Solution Unlock Input */
-#solution-unlock-container button {
-    padding: 8px 16px;
-    font-size: 0.9em;
-    border: 1px solid #6c757d;
-    border-radius: 5px;
-    background-color: transparent;
-    color: #6c757d;
-    cursor: pointer;
-}
-
-#solution-unlock-container button:hover {
-    background-color: #e9ecef;
-}
-
-/* New Stepper Layout */
-html, body {
+    padding: 0;
     height: 100%;
-    overflow: hidden; /* Prevent double scrollbars */
+    font-family: 'Inter', sans-serif;
+    color: var(--text-main);
+    background-color: var(--bg-main);
+    overflow: hidden;
+    /* Main scroll handles in content-wrapper */
 }
 
 #app-wrapper {
@@ -101,157 +32,251 @@ html, body {
     height: 100vh;
 }
 
+/* Sidebar Styling */
 #stepper-sidebar {
-    width: 180px;
+    width: 240px;
     flex-shrink: 0;
-    background-color: #f8f9fa;
-    border-right: 1px solid #dee2e6;
-    padding: 0.75em;
+    background-color: var(--bg-paper);
+    border-right: 1px solid var(--border-color);
+    padding: 1.5rem 1rem;
     display: flex;
     flex-direction: column;
+    z-index: 100;
 }
 
 #assignment-title {
-    margin-top: 0;
-    font-size: 1.4em;
-    color: #343a40;
-    border-bottom: 1px solid #ced4da;
-    padding-bottom: 0.6em;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.2rem;
+    margin: 0 0 1.5rem 0;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--primary);
+    line-height: 1.3;
 }
 
 #stepper-nav {
-    margin-top: 1em;
     display: flex;
     flex-direction: column;
-    gap: 0.5em;
+    gap: 0.5rem;
 }
 
 #stepper-nav a {
     text-decoration: none;
-    color: #495057;
-    padding: 12px 15px;
-    border-radius: 6px;
+    color: var(--text-muted);
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
     font-weight: 500;
-    transition: background-color 0.2s, color 0.2s;
+    transition: all 0.2s ease;
 }
 
 #stepper-nav a:hover {
-    background-color: #e9ecef;
+    background-color: #f6f8fa;
+    color: var(--primary);
 }
 
 #stepper-nav a.active {
-    background-color: #007bff;
-    color: #fff;
+    background-color: #e7f3ff;
+    color: var(--primary);
     font-weight: 600;
 }
 
+/* Main Content Area */
 #stepper-content-wrapper {
     flex-grow: 1;
+    overflow-y: auto;
+    padding: 3rem 2rem;
+    /* Dot texture background */
+    background: radial-gradient(#d1d5db 0.5px, transparent 0.5px), #f8fafc;
+    background-size: 20px 20px;
+}
+
+#paper-sheet {
+    max-width: 850px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: var(--bg-paper);
+    min-height: 85vh;
+    border-radius: 4px;
+    box-shadow: var(--shadow-main);
+    border: 1px solid var(--border-color);
+    position: relative;
     display: flex;
     flex-direction: column;
-    overflow-y: auto; /* Allow content to scroll */
-    padding: 2em 3em;
+}
+
+/* Top accent line */
+#paper-sheet::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background-color: var(--primary);
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
 }
 
 #stepper-content {
+    padding: 4rem 4rem 2rem 4rem;
     flex-grow: 1;
 }
 
+/* Navigation Buttons - Locked into the paper bottom */
 #stepper-navigation-controls {
-    margin-top: 2em;
-    padding-top: 1.5em;
-    border-top: 1px solid #e9ecef;
+    padding: 2rem 4rem 4rem 4rem;
     display: flex;
     justify-content: space-between;
+    border-top: 1px dashed var(--border-color);
+    margin-top: 2rem;
+    background-color: #fafbfc;
+    /* Subtle difference for footer */
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+/* Buttons Styling */
+button {
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s ease;
 }
 
 #stepper-navigation-controls button {
-    padding: 12px 25px;
-    font-size: 1em;
+    padding: 0.8rem 1.8rem;
+    font-size: 1rem;
     font-weight: 600;
-    border: 1px solid #007bff;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.2s;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--bg-paper);
+    color: #24292e;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-#stepper-navigation-controls button:hover {
-    background-color: #0056b3;
+#stepper-navigation-controls button:hover:not(:disabled) {
+    border-color: var(--primary);
+    background-color: #f1f8ff;
+    color: var(--primary);
 }
 
-#stepper-navigation-controls button:disabled {
-    background-color: #ced4da;
-    border-color: #ced4da;
+#next-step-btn {
+    background-color: #24292e !important;
+    color: white !important;
+    border-color: #24292e !important;
+}
+
+#next-step-btn:hover:not(:disabled) {
+    background-color: #1a1a1a !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+button:disabled {
+    opacity: 0.4;
     cursor: not-allowed;
 }
 
-/* Styling for rendered elements */
-.text-element {
-    margin-bottom: 2em;
+/* Content Elements */
+h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 1.2rem;
+    letter-spacing: -0.02em;
+}
+
+.text-element p {
+    font-size: 1.05rem;
+    color: #444;
+    line-height: 1.7;
 }
 
 .quill-element {
-    margin-bottom: 2.5em;
+    margin-bottom: 3rem;
 }
 
-.quill-element .question-prompt {
-    font-size: 1.1em;
-    font-weight: 500;
-    margin-bottom: 0.8em;
+.question-prompt {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
 }
 
-/* --- Info Callout Styles --- */
+/* Quill Adjustments */
+.ql-toolbar.ql-snow {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background: #f8fafc;
+    border-color: var(--border-color) !important;
+}
+
+.ql-container.ql-snow {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-color: var(--border-color) !important;
+    font-size: 1.05rem;
+}
+
+/* Info Callout */
 .info-callout {
-    background-color: #e3f2fd; /* Light blue background */
-    border: 1px solid #bbdefb;
-    border-left: 5px solid #2196f3; /* Thicker blue accent on the left */
-    border-radius: 4px;
-    margin-bottom: 2em;
-    overflow: hidden; /* Keeps content inside rounded corners */
-    transition: background-color 0.2s ease;
-}
-
-.info-callout:hover {
-    background-color: #d1e9fc; /* Slightly darker on hover */
+    background-color: #fdf6e3;
+    border: 1px solid #eee8d5;
+    border-left: 4px solid #b58900;
+    border-radius: 8px;
+    margin-bottom: 2.5rem;
 }
 
 .info-callout summary {
-    padding: 12px 15px;
-    font-weight: 600;
-    color: #0d47a1; /* Dark blue text */
+    padding: 1rem 1.25rem;
+    font-weight: 700;
+    color: #856404;
     cursor: pointer;
-    list-style: none; /* Optional: hides standard arrow in some browsers */
-    user-select: none;
     display: flex;
     align-items: center;
+    gap: 10px;
+    list-style: none;
 }
 
-/* Optional: Custom arrow indicator */
+.info-callout summary::-webkit-details-marker {
+    display: none;
+}
+
 .info-callout summary::after {
-    content: '▼';
-    font-size: 0.8em;
-    margin-left: auto; /* Pushes arrow to the right */
-    transition: transform 0.2s;
+    content: "↓";
+    margin-left: auto;
+    font-weight: 900;
+    transition: transform 0.3s ease;
 }
 
 .info-callout[open] summary::after {
     transform: rotate(180deg);
 }
 
-/* The actual help text inside */
 .info-content {
-    padding: 0 15px 15px 15px;
-    color: #37474f;
-    line-height: 1.6;
-    border-top: 1px solid rgba(33, 150, 243, 0.1); /* Subtle separator */
-    margin-top: 5px;
-    padding-top: 10px;
-    animation: fadeIn 0.3s ease-in-out;
+    padding: 0 1.25rem 1.25rem 1.25rem;
+    font-size: 0.95rem;
+    color: #586e75;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-5px); }
-    to { opacity: 1; transform: translateY(0); }
+/* Sidebar Buttons */
+#print-btn,
+#logout-btn {
+    padding: 10px !important;
+    border: 1px solid var(--border-color) !important;
+    background: white !important;
+    border-radius: 8px !important;
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
+}
+
+#print-btn:hover {
+    background: #f6f8fa !important;
+}
+
+#logout-btn:hover {
+    color: #d73a49 !important;
+    border-color: #ffccc7 !important;
 }
