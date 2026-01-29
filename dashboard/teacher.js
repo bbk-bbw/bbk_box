@@ -141,7 +141,7 @@ function initPresenceListener() {
 // --- RENDER LOGIC ---
 function renderNav() {
     els.navContent.innerHTML = '';
-    
+
     // Discover Assignments
     const discoveredAssignments = new Set();
     Object.values(state.submissions).forEach(sub => {
@@ -149,22 +149,86 @@ function renderNav() {
     });
     const assignmentList = Array.from(discoveredAssignments).sort();
 
+    // --- CUSTOM FILTERS (NEW) ---
+    const customFilters = [
+        { id: 'all_submitted', className: '🌟 Alle mit Antworten' },
+        { id: 'unassigned', className: '⚠️ Ohne Klasse' }
+    ];
+
+    customFilters.forEach(filter => {
+        const group = document.createElement('div');
+        group.className = 'nav-group custom-filter-group'; // Add a class for styling if needed
+        if (state.selectedClassId === filter.id) group.classList.add('active-group'); // Optional styling
+
+        const header = document.createElement('div');
+        header.className = 'nav-class-header';
+        header.textContent = filter.className;
+        header.style.fontWeight = "bold";
+
+        if (state.selectedClassId === filter.id) {
+            header.style.background = "#e9ecef"; // Highlight active state
+            header.style.color = "#000";
+        }
+
+        header.addEventListener('click', () => selectClass(filter.id));
+        group.appendChild(header);
+
+        // If selected, show assignments too? 
+        // For "All Submitted" it makes sense to show discovered assignments so you can filter ALL students by assignment
+        if (state.selectedClassId === filter.id && assignmentList.length > 0) {
+            assignmentList.forEach(assId => {
+                const item = document.createElement('div');
+                item.className = 'nav-assignment-item';
+                item.textContent = `📄 ${assId}`;
+                if (state.selectedAssignmentId === assId) {
+                    item.classList.add('active');
+                }
+                item.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    selectClass(filter.id);
+                    selectAssignment(assId);
+                });
+                group.appendChild(item);
+            });
+        }
+
+        els.navContent.appendChild(group);
+    });
+
+    // Separator
+    const sep = document.createElement('hr');
+    sep.style.margin = "10px 0";
+    sep.style.border = "none";
+    sep.style.borderTop = "1px solid #ddd";
+    els.navContent.appendChild(sep);
+    // ----------------------------
+
     if (state.classes.length === 0) {
-        els.navContent.innerHTML = '<p style="padding:10px; color:#666;">Keine Klassen gefunden. Bitte erstellen Sie Klassen in der Verwaltung.</p>';
-        return;
+        // Keep the message but append it after custom filters
+        const msg = document.createElement('div');
+        msg.innerHTML = '<p style="padding:10px; color:#666;">Keine regulären Klassen gefunden.</p>';
+        els.navContent.appendChild(msg);
     }
 
     state.classes.forEach(cls => {
         const group = document.createElement('div');
         group.className = 'nav-group';
-        
+
         const header = document.createElement('div');
         header.className = 'nav-class-header';
         header.textContent = cls.className;
+        if (state.selectedClassId === cls.id) {
+            header.style.background = "#e9ecef";
+            header.style.color = "#000";
+        }
         header.addEventListener('click', () => selectClass(cls.id));
         group.appendChild(header);
 
-        if (assignmentList.length > 0) {
+        if (state.selectedClassId === cls.id && assignmentList.length > 0) { // Only show assignments if class is selected to save space? Or always? Original was always (nested in logic). 
+            // Original logic: "if (assignmentList.length > 0)" was inside the loop, so it showed for all classes. 
+            // To match "accordion" style or keep it clean, maybe only show for active? 
+            // User didn't ask for accordion, but previous code showed them always. Let's keep it simple.
+            // Actually, original code appended them to every group. Let's keep that behavior.
             assignmentList.forEach(assId => {
                 const item = document.createElement('div');
                 item.className = 'nav-assignment-item';
@@ -179,7 +243,9 @@ function renderNav() {
                 });
                 group.appendChild(item);
             });
-        } else {
+        }
+        // Custom Handling for empty assignments in regular classes
+        if (assignmentList.length === 0) {
             group.innerHTML += '<div class="nav-assignment-item" style="font-style:italic; color:#999;">Keine aktiven Aufgaben</div>';
         }
         els.navContent.appendChild(group);
@@ -240,16 +306,16 @@ function renderStudentList() {
 
         let statusText = 'Inaktiv';
         let statusClass = 'empty';
-        
+
         // --- PRESENCE LOGIC (NEW) ---
         let presenceIndicator = '<span class="presence-indicator presence-idle" title="Offline"></span>';
         let presenceText = '';
-        
+
         const presence = state.presenceData[student.id];
         if (presence && presence.lastActive) {
             const lastActive = presence.lastActive.toDate();
             const secondsAgo = (now - lastActive) / 1000;
-            
+
             if (secondsAgo < 30) {
                 presenceIndicator = '<span class="presence-indicator presence-active" title="Aktiv"></span>';
                 presenceText = '<span class="meta-info">🟢 Gerade aktiv</span>';
@@ -280,7 +346,7 @@ function renderStudentList() {
             </div>
             <span class="status ${statusClass}">${statusText} ${presenceText}</span>
         `;
-        
+
         card.addEventListener('click', () => {
             state.selectedStudentId = student.id;
             state.selectedPageIndex = 0;
@@ -297,8 +363,23 @@ function renderStudentList() {
 
 function getOrderedStudents() {
     if (!state.selectedClassId) return [];
-    return state.users
-        .filter(u => u.classId === state.selectedClassId)
+
+    let filteredUsers = [];
+
+    if (state.selectedClassId === 'unassigned') {
+        const classIds = new Set(state.classes.map(c => c.id));
+        filteredUsers = state.users.filter(u => !u.classId || !classIds.has(u.classId));
+    } else if (state.selectedClassId === 'all_submitted') {
+        filteredUsers = state.users.filter(u => {
+            const sub = state.submissions[u.id];
+            // Check if they have ANY submission keys
+            return sub && Object.keys(sub).length > 0;
+        });
+    } else {
+        filteredUsers = state.users.filter(u => u.classId === state.selectedClassId);
+    }
+
+    return filteredUsers
         .slice()
         .sort((a, b) => (a.displayName || '').localeCompare(b.displayName || ''));
 }
