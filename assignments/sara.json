@@ -5,21 +5,21 @@
         {
             "id": "sara-einstieg",
             "title": "1. Gesprächseinstieg",
-            "helpText": "<h4>Fallbeschreibung</h4><p>Sara ist eine Auszubildende im dritten Jahr ihrer Ausbildung. In den letzten Monaten sind Ihnen als Berufsbildnerin mehrere problematische Situationen aufgefallen. Sara kommt häufig in Konflikte mit ihren Kolleginnen und Kollegen, wirkt gestresst und überfordert. Zudem hat sie Probleme, ihre Arbeitszeiten einzuhalten, und ihre Arbeitsergebnisse haben nachgelassen. Sie haben auch beobachtet, dass Sara neu in der Mittagspause raucht. Sie möchten ein Interventionsgespräch mit Sara führen, um die verschiedenen Probleme anzusprechen und gemeinsam Lösungsansätze zu erarbeiten.</p><hr><h4>Wichtiger Hinweis zum Schritt</h4><p>Sara ist im 3. Jahr. Betonen Sie, dass das Gespräch dazu dient, ihren Lehrabschluss nicht zu gefährden.</p>",
+            "helpText": "<h4>Fallbeschreibung</h4><p>Sara ist eine Auszubildende im zweiten Jahr ihrer Ausbildung. Zu Beginn ihrer Lehre waren Sie als Berufsbildner/in mit ihren Leistungen und ihrer Motivation sehr zufrieden. In den letzten Monaten stellen Sie jedoch eine Veränderung fest. Die Qualität ihrer Arbeit hat nachgelassen; Aufgaben werden manchmal nur oberflächlich oder mit Flüchtigkeitsfehlern erledigt. Sie wirkt oft abgelenkt und weniger bei der Sache. Ihnen ist zudem aufgefallen, dass Sara häufiger ihr privates Mobiltelefon während der Arbeitszeit nutzt und auf Nachfragen oder Feedback zu ihren Aufgaben manchmal gereizt oder abwehrend reagiert. Sie möchten ein Interventionsgespräch mit Sara führen, um Ihre Beobachtungen anzusprechen, die möglichen Gründe für die Veränderung zu verstehen und gemeinsam Wege zu finden, wie sie ihre Konzentration und Arbeitsqualität wieder verbessern kann und sich wieder stärker engagiert.</p><hr><h4>Wichtiger Hinweis zum Schritt</h4><p>Sprechen Sie die Veränderung wertschätzend an, da Sara früher sehr gute Leistungen erbracht hat.</p>",
             "elements": [
                 {
                     "type": "text",
-                    "content": "<h3>Den Einstieg gestalten</h3><p>Begrüssen Sie Sara und schaffen Sie eine Atmosphäre, die ein offenes Gespräch trotz des spürbaren Stresses ermöglicht.</p>"
+                    "content": "<h3>Den Einstieg gestalten</h3><p>Schaffen Sie eine professionelle Atmosphäre und leiten Sie behutsam zum Thema der Leistungsveränderung über.</p>"
                 },
                 {
                     "type": "quill",
                     "id": "sara_q1_begruessung",
-                    "question": "Wie begrüssen Sie Sara freundlich und schaffen eine ruhige Atmosphäre?"
+                    "question": "Wie begrüssen Sie Sara freundlich und schaffen eine vertrauensvolle Atmosphäre?"
                 },
                 {
                     "type": "quill",
                     "id": "sara_q1_grund",
-                    "question": "Mit welchen Worten erklären Sie den Grund für das Gespräch klar und direkt, aber ohne sofort anzuklagen?"
+                    "question": "Mit welchen Worten erklären Sie den Grund für das Gespräch (die beobachtete Veränderung) sachlich?"
                 },
                 {
                     "type": "quill",
@@ -31,78 +31,78 @@
         {
             "id": "sara-verhalten",
             "title": "2. Verhaltensweisen",
-            "helpText": "<h4>Fallbeschreibung</h4><p>Sara ist eine Auszubildende im dritten Jahr ihrer Ausbildung. In den letzten Monaten sind Ihnen als Berufsbildnerin mehrere problematische Situationen aufgefallen. Sara kommt häufig in Konflikte mit ihren Kolleginnen und Kollegen, wirkt gestresst und überfordert. Zudem hat sie Probleme, ihre Arbeitszeiten einzuhalten, und ihre Arbeitsergebnisse haben nachgelassen. Sie haben auch beobachtet, dass Sara neu in der Mittagspause raucht. Sie möchten ein Interventionsgespräch mit Sara führen, um die verschiedenen Probleme anzusprechen und gemeinsam Lösungsansätze zu erarbeiten.</p><hr><h4>Wichtiger Hinweis zum Schritt</h4><p>Sprechen Sie die Konflikte im Team direkt an, ohne Partei zu ergreifen.</p>",
+            "helpText": "<h4>Fallbeschreibung</h4><p>Sara ist eine Auszubildende im zweiten Jahr ihrer Ausbildung. Zu Beginn ihrer Lehre waren Sie als Berufsbildner/in mit ihren Leistungen und ihrer Motivation sehr zufrieden. In den letzten Monaten stellen Sie jedoch eine Veränderung fest. Die Qualität ihrer Arbeit hat nachgelassen; Aufgaben werden manchmal nur oberflächlich oder mit Flüchtigkeitsfehlern erledigt. Sie wirkt oft abgelenkt und weniger bei der Sache. Ihnen ist zudem aufgefallen, dass Sara häufiger ihr privates Mobiltelefon während der Arbeitszeit nutzt und auf Nachfragen oder Feedback zu ihren Aufgaben manchmal gereizt oder abwehrend reagiert. Sie möchten ein Interventionsgespräch mit Sara führen, um Ihre Beobachtungen anzusprechen, die möglichen Gründe für die Veränderung zu verstehen und gemeinsam Wege zu finden, wie sie ihre Konzentration und Arbeitsqualität wieder verbessern kann und sich wieder stärker engagiert.</p><hr><h4>Wichtiger Hinweis zum Schritt</h4><p>Nennen Sie konkrete Beispiele für die Flüchtigkeitsfehler und die Handynutzung, ohne Sara zu bewerten.</p>",
             "elements": [
                 {
                     "type": "text",
-                    "content": "<h3>Beobachtbares Verhalten beschreiben</h3><p>Schildern Sie Ihre Beobachtungen sachlich. Berücksichtigen Sie ihre fortgeschrittene Ausbildung.</p>"
+                    "content": "<h3>Beobachtbares Verhalten beschreiben</h3><p>Schildern Sie Ihre Beobachtungen aus den letzten Monaten möglichst objektiv.</p>"
                 },
                 {
                     "type": "quill",
                     "id": "sara_q2_konkret",
-                    "question": "Welche konkreten, beobachtbaren Verhaltensweisen nennen Sie Sara?"
+                    "question": "Welche konkreten, beobachtbaren Verhaltensweisen (z.B. Handynutzung, Arbeitsqualität) sprechen Sie an?"
                 },
                 {
                     "type": "quill",
                     "id": "sara_q2_ich_botschaft",
-                    "question": "Wie nutzen Sie Ich-Botschaften, um Ihre Wahrnehmung zu schildern?"
+                    "question": "Wie nutzen Sie Ich-Botschaften, um Ihre Wahrnehmung der Veränderung zu schildern?"
                 },
                 {
                     "type": "quill",
                     "id": "sara_q2_sichtweise",
-                    "question": "Wie geben Sie Sara die Möglichkeit, ihre Sichtweise zu äussern?"
+                    "question": "Wie geben Sie Sara die Gelegenheit, die Situation aus ihrer Sicht zu erklären?"
                 }
             ]
         },
         {
             "id": "sara-vertrauen",
             "title": "3. Vertrauen aufbauen",
-            "helpText": "<h4>Fallbeschreibung</h4><p>Sara ist eine Auszubildende im dritten Jahr ihrer Ausbildung. In den letzten Monaten sind Ihnen als Berufsbildnerin mehrere problematische Situationen aufgefallen. Sara kommt häufig in Konflikte mit ihren Kolleginnen und Kollegen, wirkt gestresst und überfordert. Zudem hat sie Probleme, ihre Arbeitszeiten einzuhalten, und ihre Arbeitsergebnisse haben nachgelassen. Sie haben auch beobachtet, dass Sara neu in der Mittagspause raucht. Sie möchten ein Interventionsgespräch mit Sara führen, um die verschiedenen Probleme anzusprechen und gemeinsam Lösungsansätze zu erarbeiten.</p><hr><h4>Wichtiger Hinweis zum Schritt</h4><p>Thematisieren Sie den Stress – das Rauchen könnte ein Symptom für Überlastung sein.</p>",
+            "helpText": "<h4>Fallbeschreibung</h4><p>Sara ist eine Auszubildende im zweiten Jahr ihrer Ausbildung. Zu Beginn ihrer Lehre waren Sie als Berufsbildner/in mit ihren Leistungen und ihrer Motivation sehr zufrieden. In den letzten Monaten stellen Sie jedoch eine Veränderung fest. Die Qualität ihrer Arbeit hat nachgelassen; Aufgaben werden manchmal nur oberflächlich oder mit Flüchtigkeitsfehlern erledigt. Sie wirkt oft abgelenkt und weniger bei der Sache. Ihnen ist zudem aufgefallen, dass Sara häufiger ihr privates Mobiltelefon während der Arbeitszeit nutzt und auf Nachfragen oder Feedback zu ihren Aufgaben manchmal gereizt oder abwehrend reagiert. Sie möchten ein Interventionsgespräch mit Sara führen, um Ihre Beobachtungen anzusprechen, die möglichen Gründe für die Veränderung zu verstehen und gemeinsam Wege zu finden, wie sie ihre Konzentration und Arbeitsqualität wieder verbessern kann und sich wieder stärker engagiert.</p><hr><h4>Wichtiger Hinweis zum Schritt</h4><p>Hinterfragen Sie die Gründe für die Gereiztheit – könnte privater Stress oder ein Motivationsloch im 2. Jahr dahinterstecken?</p>",
             "elements": [
                 {
                     "type": "text",
-                    "content": "<h3>Verständnis signalisieren</h3><p>Bauen Sie Vertrauen auf, um die Ursachen für Saras Verhaltensänderung zu verstehen.</p>"
+                    "content": "<h3>Verständnis signalisieren</h3><p>Bauen Sie eine Brücke zu Sara, um die tiefergehenden Gründe für ihren Rückzug zu verstehen.</p>"
                 },
                 {
                     "type": "quill",
                     "id": "sara_q3_perspektive",
-                    "question": "Mit welchen Worten signalisieren Sie, dass Sie versuchen, Saras Perspektive zu verstehen?"
+                    "question": "Mit welchen Worten signalisieren Sie Sara, dass Sie an einer Lösung und nicht an einer Bestrafung interessiert sind?"
                 },
                 {
                     "type": "quill",
                     "id": "sara_q3_fragen",
-                    "question": "Welche offenen Fragen stellen Sie, um mehr über die Gründe ihres Stresses zu erfahren?"
+                    "question": "Welche offenen Fragen stellen Sie, um die Hintergründe der Konzentrationsprobleme zu erfahren?"
                 },
                 {
                     "type": "quill",
                     "id": "sara_q3_unterstuetzung",
-                    "question": "Wie bekräftigen Sie Ihre Unterstützung für den erfolgreichen Lehrabschluss?"
+                    "question": "Wie bekräftigen Sie Ihr Vertrauen in Saras Fähigkeiten, an die früheren Leistungen anzuknüpfen?"
                 }
             ]
         },
         {
             "id": "sara-auswirkungen",
             "title": "4. Auswirkungen",
-            "helpText": "<h4>Fallbeschreibung</h4><p>Sara ist eine Auszubildende im dritten Jahr ihrer Ausbildung. In den letzten Monaten sind Ihnen als Berufsbildnerin mehrere problematische Situationen aufgefallen. Sara kommt häufig in Konflikte mit ihren Kolleginnen und Kollegen, wirkt gestresst und überfordert. Zudem hat sie Probleme, ihre Arbeitszeiten einzuhalten, und ihre Arbeitsergebnisse haben nachgelassen. Sie haben auch beobachtet, dass Sara neu in der Mittagspause raucht. Sie möchten ein Interventionsgespräch mit Sara führen, um die verschiedenen Probleme anzusprechen und gemeinsam Lösungsansätze zu erarbeiten.</p><hr><h4>Wichtiger Hinweis zum Schritt</h4><p>Machen Sie deutlich, dass Verhaltensänderungen im Teamklima kurz vor dem Abschluss besonders kritisch sind.</p>",
+            "helpText": "<h4>Fallbeschreibung</h4><p>Sara ist eine Auszubildende im zweiten Jahr ihrer Ausbildung. Zu Beginn ihrer Lehre waren Sie als Berufsbildner/in mit ihren Leistungen und ihrer Motivation sehr zufrieden. In den letzten Monaten stellen Sie jedoch eine Veränderung fest. Die Qualität ihrer Arbeit hat nachgelassen; Aufgaben werden manchmal nur oberflächlich oder mit Flüchtigkeitsfehlern erledigt. Sie wirkt oft abgelenkt und weniger bei der Sache. Ihnen ist zudem aufgefallen, dass Sara häufiger ihr privates Mobiltelefon während der Arbeitszeit nutzt und auf Nachfragen oder Feedback zu ihren Aufgaben manchmal gereizt oder abwehrend reagiert. Sie möchten ein Interventionsgespräch mit Sara führen, um Ihre Beobachtungen anzusprechen, die möglichen Gründe für die Veränderung zu verstehen und gemeinsam Wege zu finden, wie sie ihre Konzentration und Arbeitsqualität wieder verbessern kann und sich wieder stärker engagiert.</p><hr><h4>Wichtiger Hinweis zum Schritt</h4><p>Zeigen Sie auf, dass Flüchtigkeitsfehler im 2. Jahr weitreichendere Folgen haben können als im 1. Jahr.</p>",
             "elements": [
                 {
                     "type": "text",
-                    "content": "<h3>Konsequenzen aufzeigen</h3><p>Geben Sie Sara eine klare Rückmeldung zu den Risiken ihrer aktuellen Situation.</p>"
+                    "content": "<h3>Konsequenzen aufzeigen</h3><p>Machen Sie die Tragweite der nachlassenden Qualität für den Betrieb und Saras berufliche Zukunft deutlich.</p>"
                 },
                 {
                     "type": "quill",
                     "id": "sara_q4_folgen",
-                    "question": "Welche Folgen hat ihr Verhalten für das Teamklima und ihren Lehrabschluss?"
+                    "question": "Welche Folgen haben die oberflächliche Arbeitsweise und die Ablenkung für das Team und die Kunden?"
                 },
                 {
                     "type": "quill",
                     "id": "sara_q4_sachlich",
-                    "question": "Wie formulieren Sie diese Auswirkungen sachlich?"
+                    "question": "Wie formulieren Sie diese Auswirkungen, ohne Sara weiter zu demotivieren?"
                 },
                 {
                     "type": "quill",
                     "id": "sara_q4_zusammenhang",
-                    "question": "Wie stellen Sie den Zusammenhang zwischen Verhalten und Konsequenzen her?"
+                    "question": "Wie stellen Sie den Zusammenhang zwischen ihrem Engagement und ihrer beruflichen Weiterentwicklung her?"
                 }
             ]
         }
