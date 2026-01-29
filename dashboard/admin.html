@@ -1,6 +1,7 @@
 <!-- FILE: dashboard/admin.html -->
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,19 +9,95 @@
     <link rel="stylesheet" href="teacher.css">
     <style>
         /* Admin specific overrides */
-        #admin-container { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding: 20px; height: 100vh; box-sizing: border-box; }
-        .admin-panel { background: white; border: 1px solid #e0e0e0; border-radius: 8px; display: flex; flex-direction: column; }
-        .panel-content { padding: 20px; overflow-y: auto; flex: 1; }
-        .form-box { background: #f8f9fa; padding: 15px; border-radius: 6px; margin-bottom: 20px; border: 1px solid #dee2e6; }
-        .form-box h4 { margin-top: 0; margin-bottom: 10px; }
-        .form-box input, .form-box select { width: 100%; padding: 8px; margin-bottom: 10px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; }
-        .list-item { padding: 10px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
-        .list-item:last-child { border-bottom: none; }
-        .header-bar { background: #343a40; color: white; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
-        .header-bar a { color: white; text-decoration: none; margin-right: 20px; }
-        .header-bar a:hover { text-decoration: underline; }
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        #admin-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 20px;
+            flex: 1;
+            min-height: 0;
+            box-sizing: border-box;
+        }
+
+        .admin-panel {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+        }
+
+        .panel-content {
+            padding: 20px;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        .form-box {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            border: 1px solid #dee2e6;
+        }
+
+        .form-box h4 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .form-box input,
+        .form-box select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .list-item {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .list-item:last-child {
+            border-bottom: none;
+        }
+
+        .header-bar {
+            background: #343a40;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-bar a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+        .header-bar a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
+
 <body>
     <div class="header-bar">
         <h2>LMS Verwaltung</h2>
@@ -33,7 +110,9 @@
     <div id="admin-container">
         <!-- Left: Class Management -->
         <div class="admin-panel">
-            <div class="pane-header"><h3>Klassen verwalten</h3></div>
+            <div class="pane-header">
+                <h3>Klassen verwalten</h3>
+            </div>
             <div class="panel-content">
                 <div class="form-box">
                     <h4>Neue Klasse erstellen</h4>
@@ -50,7 +129,9 @@
 
         <!-- Right: Student Management -->
         <div class="admin-panel">
-            <div class="pane-header"><h3>Schüler verwalten</h3></div>
+            <div class="pane-header">
+                <h3>Schüler verwalten</h3>
+            </div>
             <div class="panel-content">
                 <div class="form-box">
                     <h4>Neuen Schüler hinzufügen</h4>
@@ -83,4 +164,5 @@
     <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore-compat.js"></script>
     <script src="admin.js" type="module"></script>
 </body>
+
 </html>
